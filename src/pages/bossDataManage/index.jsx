@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './index.css';
+// import styles from './index.less';
 
 export default function() {
   return (
-    <div className={styles.normal}>
-        test
+    <div className={'test'}>
+      login
     </div>
   );
 }
