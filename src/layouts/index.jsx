@@ -48,9 +48,9 @@ class BasicLayout extends React.Component{
   // constructor(props){
   //   super(props)
   // }
-  // componentDidMount(){
-  //   console.log(this.props)
-  // }
+  componentDidMount(){
+    console.log(this.props)
+  }
   // 获取自组件需要的值
   getContext() {
     const { location } = this.props;
@@ -70,7 +70,7 @@ class BasicLayout extends React.Component{
           />
           <Layout 
           style={{
-            paddingLeft:'256px',
+            paddingLeft:'0px',
             minHeight: '100vh',
           }}
           >

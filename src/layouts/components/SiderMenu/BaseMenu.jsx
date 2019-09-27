@@ -15,10 +15,10 @@ export default class BaseMenu extends PureComponent {
     return (
       <Menu
         onClick={this.handleClick}
-        style={{ width: 256 }}
         defaultSelectedKeys={['bossMenu']}
         defaultOpenKeys={['boss']}
         mode="inline"
+        theme="dark"
       >
       <SubMenu
           key="boss"

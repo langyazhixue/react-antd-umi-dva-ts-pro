@@ -22,6 +22,11 @@ const config =  {
   ],
   routes:[
     {
+      path: '/login',
+      name: 'login',
+      component: './login/index',
+    },
+    {
       path: '/',
       component: '../layouts/index',
       routes:[
@@ -44,10 +49,6 @@ const config =  {
           ]
         }
       ]
-    },
-    {
-      path: '/login',
-      component: './login/index',
     }
   ]
 }
