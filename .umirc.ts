@@ -30,21 +30,26 @@ const config =  {
       path: '/',
       component: '../layouts/index',
       routes:[
-        { path: '/', redirect: '/bossAut/menu', authority: ['admin', 'user'] },
+        { path: '/', redirect: '/study/jsx', authority: ['admin', 'user'] },
         {
-          path: '/bossAut',
+          path: '/study',
           name: 'dashboard',
           icon: 'dashboard',
           routes:[
             {
-              path: '/bossAut/menu',
-              name: '菜单管理',
-              component: './bossMenuManage/index',
+              path: '/study/jsx',
+              name: 'jsx测试',
+              component: './jsxTest/index',
             },
             {
-              path: '/bossAut/data',
-              name: '数据权限',
-              component: './bossDataManage/index',
+              path:'/study/myClass',
+              name: 'class学习',
+              component: './myClass/index',
+            },
+            {
+              path: '/study/life',
+              name: '生命周期',
+              component: './lifeStudy/index',
             }
           ]
         }

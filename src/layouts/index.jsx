@@ -6,7 +6,7 @@ import SiderMenu from './components/SiderMenu';
 import { Layout } from 'antd'
 import { ContainerQuery } from 'react-container-query';
 import DocumentTitle from 'react-document-title';
-import Media from 'react-media';
+// import Media from 'react-media';
 import classNames from 'classnames';
 import MenuContext from './MenuContext'
 const { Content } = Layout

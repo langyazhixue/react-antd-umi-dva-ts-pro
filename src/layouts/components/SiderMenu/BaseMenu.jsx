@@ -15,28 +15,34 @@ export default class BaseMenu extends PureComponent {
     return (
       <Menu
         onClick={this.handleClick}
-        defaultSelectedKeys={['bossMenu']}
-        defaultOpenKeys={['boss']}
+        defaultSelectedKeys={['jsx']}
+        defaultOpenKeys={['study']}
         mode="inline"
         theme="dark"
       >
       <SubMenu
-          key="boss"
+          key="study"
           title={
             <span>
               <Icon type="mail" />
-              <span>boss权限</span>
+              <span>学习</span>
             </span>
           }
         >
-          <Menu.Item key="bossMenu">
-            <Link to='/bossAut/menu'>
-              <span>菜单权限</span>
+          <Menu.Item key="jsx">
+            <Link to='/study/jsx'>
+              <span>jsx测试</span>
             </Link>
             </Menu.Item>
-          <Menu.Item key="bossData">
-            <Link to='/bossAut/data'>
-              <span>菜单权限</span>
+
+            <Menu.Item key="myClass">
+            <Link to='/study/myClass'>
+              <span>class学习</span>
+            </Link>
+            </Menu.Item>
+          <Menu.Item key="life">
+            <Link to='/study/life'>
+              <span>生命周期</span>
             </Link>
           </Menu.Item>
         </SubMenu>
