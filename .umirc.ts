@@ -39,17 +39,32 @@ const config =  {
             {
               path: '/study/jsx',
               name: 'jsx测试',
-              component: './jsxTest/index',
+              component: './myStudy/jsxTest/index',
             },
             {
               path:'/study/myClass',
               name: 'class学习',
-              component: './myClass/index',
+              component: './myStudy/classTest/index',
             },
             {
               path: '/study/life',
               name: '生命周期',
-              component: './lifeStudy/index',
+              component: './myStudy/lifeCycleTest/index',
+            },
+            {
+              path: '/study/setStateTest',
+              name: 'setState特性讨论',
+              component: './myStudy/setStateTest/index',
+            },
+            {
+              path: '/study/hooks',
+              name: 'hooks',
+              component: './myStudy/hooks/index',
+            },
+            {
+              path: '/study/communication',
+              name: '组件的几种通信方式',
+              component: './myStudy/componentCommunication/index',
             }
           ]
         }

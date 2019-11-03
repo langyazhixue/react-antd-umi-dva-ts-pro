@@ -45,6 +45,22 @@ export default class BaseMenu extends PureComponent {
               <span>生命周期</span>
             </Link>
           </Menu.Item>
+          <Menu.Item key="setState">
+            <Link to='/study/setStateTest'>
+              <span>setState特性讨论</span>
+            </Link>
+          </Menu.Item>
+
+          <Menu.Item key="communication">
+            <Link to='/study/communication'>
+              <span>组件的几种通信方式</span>
+            </Link>
+          </Menu.Item>
+          <Menu.Item key="hooks">
+            <Link to='/study/hooks'>
+              <span>hooks学习</span>
+            </Link>
+          </Menu.Item>
         </SubMenu>
       </Menu>
     )
