@@ -65,6 +65,16 @@ const config =  {
               path: '/study/communication',
               name: '组件的几种通信方式',
               component: './myStudy/componentCommunication/index',
+            },
+            {
+              path: '/study/context',
+              name: 'Context',
+              component: './myStudy/contextTest/index',
+            },
+            {
+              path: '/study/HOC',
+              name: '高阶组件-HOC',
+              component: './myStudy/HOC/index',
             }
           ]
         }

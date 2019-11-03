@@ -56,11 +56,25 @@ export default class BaseMenu extends PureComponent {
               <span>组件的几种通信方式</span>
             </Link>
           </Menu.Item>
+
+          <Menu.Item key="context">
+            <Link to='/study/context'>
+              <span>context</span>
+            </Link>
+          </Menu.Item>
+
           <Menu.Item key="hooks">
             <Link to='/study/hooks'>
               <span>hooks学习</span>
             </Link>
           </Menu.Item>
+
+          <Menu.Item key="HOC">
+            <Link to='/study/HOC'>
+              <span>高阶组件-HOC</span>
+            </Link>
+          </Menu.Item>
+
         </SubMenu>
       </Menu>
     )
