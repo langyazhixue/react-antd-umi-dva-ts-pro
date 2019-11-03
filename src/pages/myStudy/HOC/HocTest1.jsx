@@ -4,10 +4,12 @@ import React, { Component } from 'react';
 //  React Redux 的 `connect` 函数
 // const ConnectedComment = connect(commentSelector, commentActions)(CommentList);
 // connect 是一个返回高阶组件的高阶函数
+
+const WrappedComponent = '<div>test</div>';
+const Comp = WappedHoc(WrappedComponent);
+
 class HOCTest2 extends Component {
   render() {
-    const WrappedComponent = '<div>test</div>';
-    const Comp = WappedHoc(WrappedComponent);
     return (
       <div>
         <Comp />
@@ -15,6 +17,7 @@ class HOCTest2 extends Component {
     );
   }
 }
+
 
 function WappedHoc(WrappedComponent) {
   return class {

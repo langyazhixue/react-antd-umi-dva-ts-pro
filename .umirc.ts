@@ -5,6 +5,14 @@
 const config =  {
   treeShaking: true,
   mountElementId:'app',
+  extraBabelPlugins:[
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ]
+  ],
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
@@ -75,6 +83,11 @@ const config =  {
               path: '/study/HOC',
               name: '高阶组件-HOC',
               component: './myStudy/HOC/index',
+            },
+            {
+              path: '/study/chainTest',
+              name: '链式调用',
+              component: './myStudy/ChainTest/index',
             }
           ]
         }

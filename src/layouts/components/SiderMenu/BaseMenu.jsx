@@ -75,6 +75,11 @@ export default class BaseMenu extends PureComponent {
             </Link>
           </Menu.Item>
 
+          <Menu.Item key="chain">
+            <Link to='/study/chainTest'>
+              <span>链式调用</span>
+            </Link>
+          </Menu.Item>
         </SubMenu>
       </Menu>
     )
