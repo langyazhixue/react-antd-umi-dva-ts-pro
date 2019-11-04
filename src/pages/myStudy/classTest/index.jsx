@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import style from './index.less';
 import yay from '@/assets/yay.jpg';
+import PropTypes from 'prop-types';
 // class组件通常拥有状态和 命周期，继承于Component，实现 render 法
 
 // 组件状态管:如果组件中数据会变化，并影响  内容，则组件需要拥有状态 (state)并维护状态。
@@ -16,11 +17,36 @@ import yay from '@/assets/yay.jpg';
 
 // 事件处理
 // React中使 onXX写法来监听事件。
-// 事件回调函数注意绑定this指向，常 三种 法:
+// 事件回调函数注意绑定this指向，常用三种方法:
 // 1. 构造函数中绑定并覆盖:this.change= this.change.bind(this)
 // 2.  法定义为箭头函数:change=()=>{}
 // 3. 事件中定义为箭头函数:onChange={()=>this.change()}
-// react 遵循单项数据流，没有双向绑定，输 框要设置value 和onChange，称为受控组件
+// react 遵循单项数据流，没有双向绑定，输入框要设置value和 onChange，称为受控组件
+
+
+class MyChildTest extends Component {
+  render() {
+    return (
+      <div>
+        <p>{this.props.title}</p>
+        <p>{this.props.tel}</p>
+      </div>
+    );
+  }
+}
+// 定义组件的默认props
+MyChildTest.defaultProps = {
+  title: '标题',
+  tel: '19009889877',
+  user:{}
+};
+MyChildTest.propTypes = {
+  title:PropTypes.string,
+  tel:PropTypes.string,
+  user:PropTypes.array,
+  myType: PropTypes.oneOf(['News', 'Photos']),
+};
+
 export default class ClassComponent extends Component {
   constructor(props) {
     super(props);
@@ -48,9 +74,9 @@ export default class ClassComponent extends Component {
     console.log('componentDidUpdate');
   }
   change = e => {
-    var value= e.target.value
+    var value = e.target.value;
     this.setState({
-      name: value
+      name: value,
     });
   };
   handleInputClick() {
@@ -72,7 +98,7 @@ export default class ClassComponent extends Component {
     return (
       <div className={style.myClassComtainer}>
         {/* 函数式组件 */}
-        <MyFunTest user={user}/>
+        <MyFunTest user={user} />
         {/* 函数也是表达式 */}
         {FormatName(user)}
         {/*jsx也是表达式*/}

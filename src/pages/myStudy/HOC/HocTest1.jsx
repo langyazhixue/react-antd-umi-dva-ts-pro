@@ -18,9 +18,8 @@ class HOCTest2 extends Component {
   }
 }
 
-
 function WappedHoc(WrappedComponent) {
-  return class {
+  return class extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -30,17 +29,15 @@ function WappedHoc(WrappedComponent) {
     render() {
       // 过滤掉非此 HOC 额外的 props，且不要进行透传
       const { extraProp, ...passThroughProps } = this.props;
-
       // 将 props 注入到被包装的组件中。
       // 通常为 state 的值或者实例方法。
       const injectedProp = this.state.name + extraProp;
-
       // 将 props 传递给被包装组件
       return (
         <WrappedComponent extraProp={extraProp} injectedProp={injectedProp} {...passThroughProps} />
-      );
+      )
     }
-  };
+  }
 }
 
 export default HOCTest2;

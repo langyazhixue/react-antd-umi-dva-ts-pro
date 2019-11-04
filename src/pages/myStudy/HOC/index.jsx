@@ -1,11 +1,12 @@
 // 为了提高组件复用率，可测试性，就要保证组件功能单
-// 但是若要满足复杂需求就要扩展功能单 的组件，在React 就有 HOC(Higher- Order Components)的概念，
+// 但是若要满足复杂需求就要扩展功能单一的组件，在React中就有HOC(Higher- Order Components)的概念，
 
-// 定义:是 个函数，它接收 个组件并返回另 个组件。
+// 定义:是一个函数，它接收一个组件并返回另一个组件。
 // EnhancedComponent = higherOrderComponent(WrappedComponent);
 // 组件是将props 转换为UI,而高阶组件是将组件转换为另一个组件
 
 // 使用 HOC 解决横切关注点问题
+// 链式调用也属于高级组件
 import React, { Component } from 'react';
 // function Child(props) {
 //   return <div>Child</div>;
@@ -56,7 +57,7 @@ class MydataSource {
 const DataSource = new MydataSource()
 function withSubscription(WrappedComponent, selectData) {
   // ...并返回另一个组件...
-  return class extends React.Component {
+  return class extends React.Component{
     constructor(props) {
       super(props);
       this.handleChange = this.handleChange.bind(this);
@@ -89,7 +90,7 @@ function withSubscription(WrappedComponent, selectData) {
     }
   };
 }
-
+// 函数式组件
 function CommentList (props) {
   return (
     <div>

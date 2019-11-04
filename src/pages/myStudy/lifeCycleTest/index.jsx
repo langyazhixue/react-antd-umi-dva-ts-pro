@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 // 3. componentWillMount
 // 4. render
 // 5. componentDidMount
-// 6.  componentWillReceiveProps
+// 6. componentWillReceiveProps  父亲组件有新的props 传递下来
 // 7. shouldComponentUpdate
 // 8 componentWillUpdate
 // 9 render
@@ -55,7 +55,6 @@ class Child extends Component {
     }  else {
       return null
     }
-
   }
   // 在render之后，在componentDidUpdate之前
   getSnapshotBeforeUpdate(prevProps, prevState){

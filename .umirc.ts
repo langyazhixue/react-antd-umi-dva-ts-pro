@@ -55,6 +55,12 @@ const config =  {
               component: './myStudy/classTest/index',
             },
             {
+              path:'/study/props',
+              name: 'props类型检查',
+              component: './myStudy/PropTypeTest/index',
+            },
+
+            {
               path: '/study/life',
               name: '生命周期',
               component: './myStudy/lifeCycleTest/index',
@@ -88,6 +94,16 @@ const config =  {
               path: '/study/chainTest',
               name: '链式调用',
               component: './myStudy/ChainTest/index',
+            },
+            {
+              path: '/study/decorator',
+              name: '装饰器',
+              component: './myStudy/DecoratorTest/index',
+            },
+            {
+              path: '/study/composition',
+              name: '组件复合',
+              component: './myStudy/Composition/index',
             }
           ]
         }
