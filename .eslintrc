@@ -9,8 +9,13 @@
     "node": true,
     "es6": true
   },
+  "plugins": [
+    "react-hooks"
+  ],
   "extends": "eslint-config-umi",
   "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "no-unused-vars": [2, {
       "vars": "all",
       "args": "none"

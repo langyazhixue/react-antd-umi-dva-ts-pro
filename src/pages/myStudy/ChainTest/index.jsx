@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 function Child(props) {
   console.log(props)
   return <div style={{color:'green'}}>Child</div>;
