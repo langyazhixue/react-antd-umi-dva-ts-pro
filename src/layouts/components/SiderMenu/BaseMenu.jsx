@@ -97,6 +97,12 @@ export default class BaseMenu extends PureComponent {
               <span>组件复合</span>
             </Link>
           </Menu.Item>
+
+          <Menu.Item key="KForm">
+            <Link to="/study/KForm">
+              <span>表单组件</span>
+            </Link>
+          </Menu.Item>
         </SubMenu>
       </Menu>
     );

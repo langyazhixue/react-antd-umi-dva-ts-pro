@@ -104,7 +104,13 @@ const config =  {
               path: '/study/composition',
               name: '组件复合',
               component: './myStudy/Composition/index',
-            }
+            },
+            {
+              path: '/study/KForm',
+              name: '一个表单组件',
+              component: './myStudy/KForm/index',
+            },
+
           ]
         }
       ]
