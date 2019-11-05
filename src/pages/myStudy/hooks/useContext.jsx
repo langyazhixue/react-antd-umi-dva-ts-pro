@@ -6,7 +6,7 @@
 
 // 当组件上层最近的 <MyContext.Provider> 更新时，该 Hook 会触发重渲染，并使用最新传递给 MyContext provider 的 context value 值。
 
-import React,{ useContext } from 'react';
+import React,{ useContext,useState } from 'react';
 const themes = {
   light: {
     foreground: "#000000",
@@ -25,9 +25,17 @@ const ThemeContext = React.createContext({
 
 function MyUseContext(props) {
 
+const [theme, setTheme] = useState(themes.light)
+
+  const toggleTheme  = () => {
+    let t = theme === themes.light ? themes.dark : themes.light
+    setTheme(t)
+  }
   const ThemeContextValue = {
-    theme: themes.light,
-    toggle: () => {},
+    theme: theme,
+    toggle: () => {
+      toggleTheme()
+    }
   }
   
   return (
@@ -48,11 +56,11 @@ function Toolbar(props) {
 }
 
 function ThemedButton() {
-  const { theme }= useContext(ThemeContext);
+  const { theme, toggle }= useContext(ThemeContext);
   console.group('useContext')
   console.log(theme)
   return (
-    <button style={{ background: theme.background, color: theme.foreground,fontSize:'16px' }}>
+    <button onClick = { () => toggle() }style={{ background: theme.background, color: theme.foreground,fontSize:'16px' }}>
       I am styled by theme context!
     </button>
   );

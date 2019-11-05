@@ -32,6 +32,7 @@ function Counter(initialCount){
   // 可以通过2中方式来 初始化 默认值
   // const [state, dispatch] = useReducer(reducer,initialState)
   console.log(initialCount)
+  // 解构赋值
   const [state,dispatch] = useReducer(reducer,initialCount.count,init)
   // const memoizedCallback = useCallback(
   //   (v) => {

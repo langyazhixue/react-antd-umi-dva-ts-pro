@@ -147,7 +147,7 @@ class HOCTest extends Component {
 //   // 通常为 state 的值或者实例方法。
 //   const injectedProp = someStateOrInstanceMethod;
 
-//   // 将 props 传递给被包装组件
+//   将 props 传递给被包装组件
 //   return (
 //     <WrappedComponent
 //       injectedProp={injectedProp}

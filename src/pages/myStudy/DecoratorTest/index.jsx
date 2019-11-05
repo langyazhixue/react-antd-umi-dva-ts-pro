@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const foo = Cmp => props => {
   return (
     <div className="border">
-      <Cmp />
+      <Cmp  {...props}/>
     </div>
   );
 };
@@ -11,7 +11,7 @@ const foo = Cmp => props => {
 const foo2 = Cmp => props => {
   return (
     <div className="border" style={{ border: 'green 1px solid' }}>
-      <Cmp />
+      <Cmp {...props}/>
     </div>
   );
 };
