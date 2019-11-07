@@ -16,15 +16,15 @@ class MemoTest extends Component {
     };
   }
   componentDidMount() {
-    this.timer = setInterval(() => {
-      this.setState({
-        date: new Date(),
-        // counter:  this.state.counter + 1
-      });
-    }, 1000);
+    // this.timer = setInterval(() => {
+    //   this.setState({
+    //     date: new Date(),
+    //     // counter:  this.state.counter + 1
+    //   });
+    // }, 1000);
   }
   componentWillUnmount() {
-    clearInterval(this.timer);
+    // clearInterval(this.timer);
   }
 
   render() {
@@ -104,7 +104,7 @@ function WidhtUseCallback() {
   const callback = useCallback(() => {
     console.log(count22);
   }, [count22]);
-  console.log('111')
+  // console.log('111')
   MySet.add(callback);
   // 每次修改count，set.size就会+1，这说明useCallback依赖变量count，count变更时会返回新的函数；而val变更时，
   // set.size不会变，说明返回的是缓存的旧版本函数。
@@ -123,12 +123,11 @@ function WidhtUseCallback() {
 
 // useCallback 的使用场景
 // 有一个父组件，其中包含子组件，子组件接收一个函数作为props；通常而言，如果父组件更新了，子组件也会执行更新；但是大多数场景下，更新是没有必要的，
-// 我们可以借助useCallback来返回函数，然后把这个函数作为props传递给子组件；这样，子组件就能避免不必要的更新。
+// 我们可以借助useCallback来返回函数，然后把这个函数作为props传递给子组件；这样，子组件就能避免不必要的更新
 
 function WithUseCallbackParent() {
   const [count33, setCount33] = useState(1);
   const [val1, setVal1] = useState('');
-
   const callback = useCallback(() => {
       // 执行的值就是返回值
       return count33;
@@ -136,6 +135,7 @@ function WithUseCallbackParent() {
   return <div>
       <h4>{count33}</h4>
       <Child callback={callback}/>
+      {/* <Child count33={count33}/> */}
       <div>
           <button onClick={() => setCount33(count33 + 1)}>+</button>
           <input value={val1} onChange={event => setVal1(event.target.value)}/>
@@ -143,11 +143,24 @@ function WithUseCallbackParent() {
   </div>;
 }
 
+
+// function Child({ count33 }) {
+//   // const [count44, setCount44] = useState(() => callback());
+//   // useEffect(() => {
+//   //   console.log('useCallback')
+//   //   setCount44(callback());
+//   // }, [callback]);
+//   console.log(count33)
+//   return <div>
+//       {count33}
+//   </div>
+// }
+
 function Child({ callback }) {
   const [count44, setCount44] = useState(() => callback());
   useEffect(() => {
-    console.log(callback())
-      setCount44(callback());
+    console.log('useCallback')
+    setCount44(callback());
   }, [callback]);
   return <div>
       {count44}

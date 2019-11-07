@@ -1,9 +1,9 @@
 // 自定义Hook
 // 独立出来的 Hook
 import  { useState, useEffect } from 'react';
+
 function useMyCounter() {
   const [myCounter, setMyCounter] = useState(0);
-
   useEffect(() => {
     // const timerId = setInterval(() => {
     //   console.log('counter:update')

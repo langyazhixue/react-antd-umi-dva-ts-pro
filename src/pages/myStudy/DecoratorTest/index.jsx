@@ -16,8 +16,8 @@ const foo2 = Cmp => props => {
   );
 };
 
-// 装饰器器只能⽤用在class上
-// 执⾏行行顺序从下往上
+// 装饰器器只能用在class上
+// 执⾏顺序从下往上
 @foo2
 @foo
 class Child extends Component {

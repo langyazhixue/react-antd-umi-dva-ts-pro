@@ -1,6 +1,6 @@
-// 它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。
-// Hook 是一个特殊的函数，它可以让你“钩入” React 的特性。
-// useState 是允许你在 React 函数组件中添加 state 的 Hook。
+// 它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性
+// Hook 是一个特殊的函数，它可以让你“钩入” React 的特性
+// useState 是允许你在 React 函数组件中添加 state 的 Hook
 // Effect Hook 可以让你在函数组件中执行副作用操作
 import React, { useState, useEffect } from 'react';
 import useReducer from './useReducerHook';

@@ -111,6 +111,16 @@ const config =  {
               component: './myStudy/KForm/index',
             },
 
+            {
+              path: '/study/api',
+              name: 'ReactAPI测试',
+              component: './myStudy/APITest/index',
+            },
+            {
+              path: '/study/ref',
+              name: 'ref学习',
+              component: './myStudy/RefTest/index',
+            }
           ]
         }
       ]

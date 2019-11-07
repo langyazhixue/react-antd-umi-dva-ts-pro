@@ -30,7 +30,7 @@ MyComponent.propTypes = {
     PropTypes.string,
     PropTypes.number,
     PropTypes.instanceOf(Message)
-  ]),
+  ])
 
   // 一个指定元素类型的数组
   optionalArrayOf: PropTypes.arrayOf(PropTypes.number),

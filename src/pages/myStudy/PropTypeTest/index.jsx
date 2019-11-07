@@ -21,10 +21,11 @@ MyChildTest.defaultProps = {
   },
   myType:'News'
 };
+
 MyChildTest.propTypes = {
-  title:PropTypes.string,
-  tel:PropTypes.string,
-  user:PropTypes.object,
+  title: PropTypes.string,
+  tel: PropTypes.string,
+  user: PropTypes.object,
   myType: PropTypes.oneOf(['News', 'Photos']),
 };
 

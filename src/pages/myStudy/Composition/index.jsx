@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-// 复合组件给与你⾜足够的敏敏捷去定义⾃自定义组件的外观和⾏行行为，
-// 这种⽅方式更更 明确和安全。如果组件间有公⽤用的⾮非UI逻辑，将它们抽取为JS模块导⼊入使 ⽤用⽽而不不是继承它。
+// 复合组件给与你足够的敏捷去定义⾃自定义组件的外观和行为，
+// 这种⽅式更加明确和安全。如果组件间有公⽤用的非UI逻辑，将它们抽取为JS模块导⼊入使用，而不是继承它。
 // 类似于 Vue 中的插槽
 // $$typeof
 function Card(props) {
   console.log(props.children)
-  return <div xu="card">{props.children}</div>;
+  return <div className="card">{props.children}</div>;
 }
 
 function Formbutton(props) {

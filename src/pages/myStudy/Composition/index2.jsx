@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// 组件复合，类似于vue的插槽
 function FancyBorder(props) {
   return <div>{props.children}</div>;
 }
@@ -10,7 +11,7 @@ function Dialog(props) {
       <p className="Dialog-message">{props.message}</p>
       {props.children}
     </FancyBorder>
-  );
+  )
 }
 
 class SignUpDialog extends Component {
@@ -20,7 +21,6 @@ class SignUpDialog extends Component {
     this.handleSignUp = this.handleSignUp.bind(this);
     this.state = { login: '' };
   }
-
   render() {
     return (
       <Dialog title="Mars Exploration Program" message="How should we refer to you?">
@@ -29,11 +29,9 @@ class SignUpDialog extends Component {
       </Dialog>
     );
   }
-
   handleChange(e) {
     this.setState({ login: e.target.value });
   }
-
   handleSignUp() {
     alert(`Welcome aboard, ${this.state.login}!`);
   }

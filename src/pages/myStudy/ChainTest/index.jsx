@@ -10,14 +10,14 @@ const foo = Cmp => props => {
     <div style={{backgroundColor:'red'}}>
       <Cmp {...props} />
     </div>
-  );
-};
+  )
+}
 
 const foo2 = Cmp => props => {
   return (
     <div style={{backgroundColor:'green'}}>
-    <Cmp {...props} />
-  </div>
+      <Cmp {...props} />
+    </div>
   )
 }
 
