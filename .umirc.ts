@@ -50,6 +50,11 @@ const config =  {
               component: './myStudy/jsxTest/index',
             },
             {
+              path: '/study/dom',
+              name: 'Dom元素测试',
+              component: './myStudy/DomTest/index',
+            },
+            {
               path:'/study/myClass',
               name: 'class学习',
               component: './myStudy/classTest/index',
@@ -110,16 +115,36 @@ const config =  {
               name: '一个表单组件',
               component: './myStudy/KForm/index',
             },
+            {
+              path: '/study/ref',
+              name: 'ref学习',
+              component: './myStudy/RefTest/index',
+            },
 
+            {
+              path: '/study/lazy',
+              name: '组件懒加载',
+              component: './myStudy/lazyTest/index',
+            },
+            {
+              path: '/study/ErrorBoundaries',
+              name: 'React错误边界',
+              component: './myStudy/ErrorBoundaries/index',
+            },
+            {
+              path: '/study/portals',
+              name: 'portals测试',
+              component: './myStudy/PortalsTest/index',
+            },
             {
               path: '/study/api',
               name: 'ReactAPI测试',
               component: './myStudy/APITest/index',
             },
             {
-              path: '/study/ref',
-              name: 'ref学习',
-              component: './myStudy/RefTest/index',
+              path: '/study/ReactDomAPI',
+              name: 'ReactDomAPI测试',
+              component: './myStudy/ReactDomAPITest/index',
             }
           ]
         }

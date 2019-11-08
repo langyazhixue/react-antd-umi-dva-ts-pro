@@ -33,7 +33,11 @@ export default class BaseMenu extends PureComponent {
               <span>jsx测试</span>
             </Link>
           </Menu.Item>
-
+          <Menu.Item key="dom">
+            <Link to="/study/dom">
+              <span>dom 元素测试</span>
+            </Link>
+          </Menu.Item>
           <Menu.Item key="myClass">
             <Link to="/study/myClass">
               <span>class学习</span>
@@ -102,17 +106,44 @@ export default class BaseMenu extends PureComponent {
               <span>表单组件</span>
             </Link>
           </Menu.Item>
+          <Menu.Item key="ref">
+            <Link to="/study/ref">
+              <span>ref学习</span>
+            </Link>
+          </Menu.Item>
+          <Menu.Item key="lazy">
+            <Link to="/study/lazy">
+              <span>组件懒加载</span>
+            </Link>
+          </Menu.Item>
+
+          {/* 错误边界 */}
+          <Menu.Item key="ErrorBoundaries">
+            <Link to="/study/ErrorBoundaries">
+              <span>错误边界</span>
+            </Link>
+          </Menu.Item>
+
+          <Menu.Item key="portals">
+            <Link to="/study/portals">
+              <span>portals测试</span>
+            </Link>
+          </Menu.Item>
+
           <Menu.Item key="api">
             <Link to="/study/api">
               <span>reactAPI学习</span>
             </Link>
           </Menu.Item>
 
-          <Menu.Item key="ref">
-            <Link to="/study/ref">
-              <span>ref学习</span>
+          <Menu.Item key="ReactDomAPI">
+            <Link to="/study/ReactDomAPI">
+              <span>ReactDomAPI测试</span>
             </Link>
           </Menu.Item>
+          
+
+          
         </SubMenu>
       </Menu>
     );

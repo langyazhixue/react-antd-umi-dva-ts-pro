@@ -46,7 +46,9 @@ export default class ClassComponent extends Component {
 
   componentWillUnmount() {
     // 组件卸载前停 定时
-    clearInterval(this.timerID);
+    if(this.timerId) {
+      clearInterval(this.timerId);
+    }
   }
   componentDidUpdate() {
     console.log('componentDidUpdate');

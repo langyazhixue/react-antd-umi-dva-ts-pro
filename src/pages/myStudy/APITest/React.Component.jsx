@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import CloneElementTestMY from './MyCloneElement';
 import MyReactChildren from './MyReactChildren';
 import MyReactRef from './MyReactRef';
+import MyReactSuspense from './MyReactSuspense'
 class ReactComponentTest extends Component {
   //1. React.Component 是使用 ES6 classes 方式定义 React 组件的基类：
   render() {
@@ -37,6 +38,10 @@ class ReactComponentTest extends Component {
         <div>
           <MyReactRef />
         </div>
+       <div>
+         <h2>React.lazy</h2>
+         <div><MyReactSuspense /></div>
+       </div>
       </div>
     );
   }
