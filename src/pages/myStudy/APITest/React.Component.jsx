@@ -1,9 +1,9 @@
 import React, { Component, useState } from 'react';
 import CloneElementTestMY from './MyCloneElement';
 import MyReactChildren from './MyReactChildren';
+import MyReactRef from './MyReactRef';
 class ReactComponentTest extends Component {
   //1. React.Component 是使用 ES6 classes 方式定义 React 组件的基类：
-
   render() {
     var MyChild = foo2(foo(Child));
     return (
@@ -33,6 +33,9 @@ class ReactComponentTest extends Component {
         <div>
           <h2>React.Fragment 测试 </h2>
           <ReactFragementTest />
+        </div>
+        <div>
+          <MyReactRef />
         </div>
       </div>
     );
@@ -147,8 +150,8 @@ function MyHook() {
     value: value,
     name: 'cloneElement',
     onChange: e => {
-      setValue(e.target.value)
-    }
+      setValue(e.target.value);
+    },
   });
   console.log(MyCloneElelement); // 是 React对象了
   return MyCloneElelement;
@@ -178,4 +181,10 @@ function ReactFragementTest() {
   );
 }
 
+// React.Children
+// React.createRef
+// React.forwardRef
+// React.lazy 允许你定义一个动态加载的组件。这有助于缩减bundle的体积，并延迟加载在初次渲染时未用到的组件
+// const SomeComponent = React.lazy(() => import('./SomeComponent'));
+// React.Suspense
 export default ReactComponentTest;

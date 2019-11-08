@@ -27,7 +27,7 @@ export default function HookSTest(props) {
     return () => {
       // clearInterval(timerId);
     };
-    // [counter] 是说明在counter改变的额时候才执行
+    // [counter] 是说明在counter改变的时候才执行
     // 设置空数组意为没有依赖，则副作⽤用操作仅执⾏行行⼀一次
   }, [counter]);
 
