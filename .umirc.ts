@@ -64,7 +64,13 @@ const config =  {
               name: 'props类型检查',
               component: './myStudy/PropTypeTest/index',
             },
+            {
+              path:'/study/formControlled',
+              name: '表单受控组件',
+              component: './myStudy/FormTest/index',
+            },
 
+      
             {
               path: '/study/life',
               name: '生命周期',

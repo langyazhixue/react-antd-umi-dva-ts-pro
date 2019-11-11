@@ -93,4 +93,8 @@ function MyErrorBoundary() {
 // 错误边界应该放置在哪里
 // 错误边界的粒度由你来决定，可以将其包装在最顶层的路由组件并为用户展示一个 “Something went wrong” 的错误信息，就像服务端框架经常处理崩溃一样
 // 你也可以将单独的部件包装在错误边界以保护应用其他部分不崩溃。
+
+// 未捕获错误的新行为：任务未被错误边界捕获的错误将会导致整个React 组件被卸载
+
+
 export default MyErrorBoundary;

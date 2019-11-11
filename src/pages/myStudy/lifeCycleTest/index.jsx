@@ -40,7 +40,7 @@ class Child extends Component {
 
 // 需要注意的是，如果props传入的内容不需要影响到你的state，那么就需要返回一个null，这个返回值是必须的，所以尽量将其写到函数的末尾。
 
-  static getDerivedStateFromProps (nextProps,prevState) {
+static getDerivedStateFromProps (nextProps,prevState) {
     //返回一个对象来更新state
     console.log('11')
     const { id, name, addr } = nextProps.user

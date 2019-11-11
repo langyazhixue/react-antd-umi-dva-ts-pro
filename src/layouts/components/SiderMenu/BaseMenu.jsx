@@ -48,7 +48,11 @@ export default class BaseMenu extends PureComponent {
               <span>props类型检查</span>
             </Link>
           </Menu.Item>
-
+          <Menu.Item key="formControlled">
+            <Link to="/study/formControlled">
+              <span>表单受控组件</span>
+            </Link>
+          </Menu.Item>
           <Menu.Item key="life">
             <Link to="/study/life">
               <span>生命周期</span>
