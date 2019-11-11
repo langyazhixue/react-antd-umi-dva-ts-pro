@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-// 组件优化
-// 1. 
-// 2. 虚拟化长列表
+// 组件优化可以做的事情
 
 class  OptimizeReact extends Component {
   render() {
@@ -21,6 +19,7 @@ class  OptimizeReact extends Component {
          4. shouldComponentUpdate React.pureComponent
        </h2>
          5. 不可变的数据力量
+
       </div>
     );
   }
