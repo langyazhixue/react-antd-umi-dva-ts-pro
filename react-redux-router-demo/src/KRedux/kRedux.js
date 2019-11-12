@@ -27,7 +27,7 @@ export function createStore(reducer,enhancer) {
     currentListeners.forEach(v => v())
     return action   
   }
-  dispatch({type:'@IMOOC/KKB-REDUX'}) // 为了展示开始值
+  dispatch({type:'@IMOOC/KKB-REDUX'}) // 为了展示初始值
   return {
     getState,
     subscribe,
