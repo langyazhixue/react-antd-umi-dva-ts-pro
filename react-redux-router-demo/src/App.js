@@ -2,7 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 // import ReduxPage from './pages/ReduxPage/ReduxPage';
-import ReactReduxStore from './pages/ReduxPage/ReactReduxStore.jsx'
+// import ReactReduxStore from './page
+import KReactPage from './pages//KReduxPage/KReduxPage'
+
 function App() {
   return (
     <div className="App">
@@ -24,12 +26,16 @@ function App() {
         {/* <ReduxPage/> */}
       </div>
       <div>
-      <h2>react-redux redux</h2>
-        <ReactReduxStore/>
+      {/* <h2>react-redux redux</h2> */}
+        {/* <ReactReduxStore/> */}
       </div>
 
+      <div>
+        <h2>KRdux 测试页面</h2>
+        <KReactPage/>
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { add, minus,asyAdd } from './store/action'
+// import { add, minus, asyAdd } from './store/action'
 import store from './store/reactReduxStore'
 class ReactReduxStore extends Component {
   render() {
-    console.log("omg", this.props);
-    const { counter, add, minus, asyAdd } = this.props;
+    console.log("omg", this.props)
+    const { counter, add, minus, asyAdd } = this.props
     return (
       <div>
         <h1>ReactReduxPage</h1>
@@ -15,7 +15,7 @@ class ReactReduxStore extends Component {
         <button onClick={minus}>minus</button>
         <button onClick={asyAdd}>asyAdd</button>
       </div>
-    );
+    )
   }
 }
 const mapStateToProps = (state) => {
@@ -36,10 +36,10 @@ const mapDispatchToProps = (dispatch) => {
     minus:() => dispatch({ type: "minus" }),
     asyAdd: () => {
       setTimeout(() => {
-        dispatch({ type: "add" });
+        dispatch({ type: "add" })
       }, 1000);
     }
   }
 }
 // connect 返回一个新函数，可以接收一个等待包装的组件
-export default connect(mapStateToProps,mapDispatchToProps)(ReactReduxStore)
+export default connect(mapStateToProps, mapDispatchToProps)(ReactReduxStore)
