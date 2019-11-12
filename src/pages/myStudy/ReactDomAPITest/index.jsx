@@ -12,7 +12,7 @@ console.log(ReactDOM)
     // 从 DOM 中卸载组件，会将其事件处理器（event handlers）和 state 一并清除。
     // 如果指定容器上没有对应已挂载的组件，这个函数什么也不会做。如果组件被移除将会返回 true，如果没有组件可被移除将会返回 false。
 
-// 5. findDOMNODE()
+// 5. findDOMNode()
 // findDOMNode 是一个访问decentDOM 节点的应急方案。在大多数情况下，不推荐使用该方法，因为它会破坏组件的抽象结构
 // 大多数情况下，你可以绑定一个 ref 到 DOM 节点上，可以完全避免使用 findDOMNode。
 
@@ -28,7 +28,7 @@ class Child extends Component {
 class ReactDomAPITest extends Component {
   removeClid =() => {
     // 卸载掉整个APP
-    ReactDOM.unmountComponentAtNode(document.getElementById('app')) 
+    ReactDOM.unmountComponentAtNode(document.getElementById('app'))
   }
   render() {
     return (

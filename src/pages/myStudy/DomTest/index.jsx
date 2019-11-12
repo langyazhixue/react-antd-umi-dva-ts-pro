@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 // DOM 元素
 // React 实现了一套独立于浏览器的DOM 系统，兼顾了性能和跨浏览器的兼容性
+// 属性差异
+// React 与 HTML 之间有很多属性存在差异：
 // 1. React中，所有的DOM特性和属性（包括事件处理）都应该是小驼峰命名的方式。
 // tabindex => tabIndex
 // aria-label => aria-label
 
 // 2. checked
+
 // 3. className
 // class => className
 
 // 4. dangerouslySetInnerHTML
+// dangerouslySetInnerHTML 是 React 为浏览器 DOM 提供 innerHTML 的替换方案。
 
 // 5. htmlFor => for
 // 6. onChange
@@ -24,7 +28,7 @@ import React, { Component } from 'react';
 
 // 9. value
 // <input> 和 <textarea> 组件支持 value 属性。你可以使用它为组件设置 value。
-// </textarea>/这对于构建受控组件是非常有帮助。defaultValue 属性对应的是非受控组件的属性，用于设置组件第一次挂载时的 value。
+// </textarea>这对于构建受控组件是非常有帮助。defaultValue 属性对应的是非受控组件的属性，用于设置组件第一次挂载时的 value。
 
 // 9. 在 React 16 中，任何标准的或自定义的DOM 属性都是完全支持的。
 // React 为 DOM 提供了一套以JS 为中心的API。
@@ -46,7 +50,9 @@ class DOMTest extends Component {
         <div dangerouslySetInnerHTML={createMarkup()} style={divStyle}></div>
         {/* Just like node.tabIndex DOM API */}
         <div tabIndex="-1" />
+        {/* Just like node.className DOM API */}
         <div className="Button" />
+        {/*  Just like node.readOnly DOM API */}
         <input readOnly={true} value='11' />
       </div>
     );

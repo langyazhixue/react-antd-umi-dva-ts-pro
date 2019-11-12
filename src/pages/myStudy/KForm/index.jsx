@@ -1,4 +1,5 @@
 import KFormCreate from './kFormCreate';
+// import KFormCreateHook from './KFormCreateHook';
 import React, { Component } from 'react';
 // kFormCreate 是
 const nameRules = {
@@ -10,8 +11,12 @@ const passwordRules = {
   message: 'please input your password!',
 };
 
+//getFieldDecorator
+// validateFields
+// getFieldValue
 // 用装饰器方法
 @KFormCreate
+// @KFormCreateHook
 class MyFormPage extends Component {
   handleSubmit2 =() => {
     const { validateFields } = this.props;

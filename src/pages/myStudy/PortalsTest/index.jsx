@@ -1,10 +1,12 @@
 // Portal 提供了一种将子节点渲染到存在于父组件以外的 DOM 节点的优秀的方案
 // ReactDOM.createPortal(child, container)
-// 1. child, 是任何可渲染的React 子元素。
+// 1. child, 是任何可渲染的React子元素。
 // 2. container DOM 元素
 
 // 一个 portal 的典型用例是当父组件有 overflow: hidden 或 z-index 样式时，但你需要子组件能够在视觉上“跳出”其容器。例如，对话框、悬浮卡以及提示框
 
+// 通过Portal进行事件冒泡
+// 这包含事件冒泡。一个从 portal 内部触发的事件会一直冒泡至包含 React 树的祖先，即便这些元素并不是 DOM 树 中的祖先。
 import React from 'react';
 import ReactDOM from 'react-dom';
 const modalRoot = document.getElementById('model-root');
@@ -19,7 +21,7 @@ class Modal extends React.Component {
     // 这个 portal 元素会被嵌入到 DOM 树中，
     // 这意味着子元素将被挂载到一个分离的 DOM 节点中。
     // 如果要求子组件在挂载时可以立刻接入 DOM 树，
-    // 例如衡量一个 DOM 节点，
+    // 例如 衡量一个 DOM 节点，
     // 或者在后代节点中使用 ‘autoFocus’，
     // 则需添加 state 到 Modal 中，
     // 仅当 Modal 被插入 DOM 树中才能渲染子元素。

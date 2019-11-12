@@ -58,7 +58,7 @@ function BlueDatePicker() {
 ###  用户定义的组件必须以大写字母开头
 
 ### 在运行时选择类型 
-  你不能将通用表达式作为 React 元素类型。如果你想通过通用表达式来（动态）决定元素类型，你需要首先将它赋值给大写字母开头的变量。这通常用于根据 prop 来渲染不同组件的情况下， 
+  你不能将通用表达式作为 React 元素类型。如果你想通过通用表达式来（动态）决定元素类型，你需要首先将它赋值给大写字母开头的变量。这通常用于根据 prop 来渲染不同组件的情况下
   
   需要首先将类型赋值给一个大写字母开头的变量
 
@@ -97,7 +97,7 @@ function BlueDatePicker() {
 ```
 
 
-* Props 默认值为`true`
+* Props 默认值为`true` 不推荐
 如果你没给 prop 赋值，它的默认值是 true。
 
 ```js
@@ -210,7 +210,7 @@ function ListOfTenThings() {
     <Repeat numTimes={10}>
       {(index) => <div key={index}>This is item {index} in the list</div>}
     </Repeat>
-  );
+  )
 }
 ```
 

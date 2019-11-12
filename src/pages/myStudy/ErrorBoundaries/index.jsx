@@ -1,14 +1,12 @@
 // 错误边界
 
 // 过去,在组件内的JavaScript 错误会导致 React的 内部状态被破坏，并在下一次渲染时候产生可能无法追踪的错误
-// 些错误基本上是由较早的其他代码（非 React 组件代码）错误引起的，但 React 并没有提供一种在组件中优雅处理这些错误的方式，也无法从错误中恢复。
+// 这些错误基本上是由较早的其他代码（非 React 组件代码）错误引起的，但 React 并没有提供一种在组件中优雅处理这些错误的方式，也无法从错误中恢复
 
 // 部分 UI 的 JavaScript 错误不应该导致整个应用崩溃，为了解决这个问题，React 16 引入了一个新的概念 —— 错误边界。
 
 // 错误边界是一种React 组件，这种组件可以捕获并打印发生在其自组件树任何位置的js错误，并且会渲染出备用UI，而不是渲染出备用UI
 // 错误边界在渲染期间、生命周期方法和整个组件树的构造函数中捕获错误
-
-//
 
 import React from 'react';
 function logErrorToMyService(error, errorInfo) {
@@ -19,7 +17,7 @@ class ErrorBoundary extends React.Component {
     super(props);
     this.state = { hasError: false };
   }
-
+  // 错误边界的重要概念
   static getDerivedStateFromError(error) {
     // 更新 state 使下一次渲染能够显示降级后的 UI
     return { hasError: true };
@@ -47,6 +45,7 @@ class MyWidget extends React.Component {
       list: [],
     };
   }
+  // 在这里可以将受到的props绑定到props上
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.list) {
       return {

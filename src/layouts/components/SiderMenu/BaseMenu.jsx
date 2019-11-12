@@ -110,6 +110,12 @@ export default class BaseMenu extends PureComponent {
               <span>表单组件</span>
             </Link>
           </Menu.Item>
+          <Menu.Item key="KDialog">
+            <Link to="/study/KDialog">
+              <span>弹窗组件</span>
+            </Link>
+          </Menu.Item>
+
           <Menu.Item key="ref">
             <Link to="/study/ref">
               <span>ref学习</span>
@@ -145,9 +151,9 @@ export default class BaseMenu extends PureComponent {
               <span>ReactDomAPI测试</span>
             </Link>
           </Menu.Item>
-          
 
-          
+
+
         </SubMenu>
       </Menu>
     );

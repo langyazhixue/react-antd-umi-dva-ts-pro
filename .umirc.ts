@@ -122,6 +122,11 @@ const config =  {
               component: './myStudy/KForm/index',
             },
             {
+              path: '/study/KDialog',
+              name: '一个弹窗组件',
+              component: './myStudy/KDialog/index',
+            },
+            {
               path: '/study/ref',
               name: 'ref学习',
               component: './myStudy/RefTest/index',

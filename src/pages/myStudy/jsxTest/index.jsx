@@ -27,7 +27,7 @@ const arr = [1, 2, 3].map(num => {
 // JSX => React.createElement(...)
 // 函数组件通常 状态，仅关注内容展示，返回渲染结果即可。
 
-//  函数作为自元素
+//  函数作子元素
 function Repeat(props) {
   let items = [];
   for (let i = 0; i < props.numTimes; i++) {

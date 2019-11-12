@@ -21,7 +21,7 @@ const FancyButton = React.forwardRef((props, ref) => {
 });
 
 // 你可以直接获取 DOM button 的 ref
-// React.createRef 
+// React.createRef
 // React.createRef 创建一个能够通过 ref 属性附加到 React 元素的 ref
 class RefTransmitTest extends Component {
   componentWillMount() {
