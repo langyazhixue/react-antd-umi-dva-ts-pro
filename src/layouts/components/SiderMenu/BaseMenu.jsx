@@ -75,7 +75,12 @@ export default class BaseMenu extends PureComponent {
               <span>context</span>
             </Link>
           </Menu.Item>
-
+          <Menu.Item key="getChildContext">
+            <Link to="/study/getChildContext">
+              <span>getChildContext</span>
+            </Link>
+          </Menu.Item>
+          
           <Menu.Item key="hooks">
             <Link to="/study/hooks">
               <span>hooks学习</span>

@@ -6,13 +6,13 @@
 
 export function createStore(reducer,enhancer) {
   if(enhancer) {
+    // 如果有中间件，就走中间件了
     return enhancer(createStore)(reducer)
   }
   // 保存状态
-
   let currentState = undefined
-  // 回调函数
 
+  // 回调函数
   let currentListeners = []
 
   function getState(){
@@ -21,7 +21,6 @@ export function createStore(reducer,enhancer) {
   function subscribe(listener){
     currentListeners.push(listener)
   }
-
   function dispatch(action) {
     currentState = reducer(currentState, action)
     currentListeners.forEach(v => v())
@@ -46,21 +45,21 @@ export function createStore(reducer,enhancer) {
 // );
 // 
 
-function f1(x) {
-  console.log(x)
-  console.log("f1")
-  return x
-}
-function f2(y) {
-  console.log(y)
-  console.log("f2")
-  return y
-}
-function f3(z) {
-  console.log(z)
-  console.log("f3");
-  return z
-}
+// function f1(x) {
+//   console.log(x)
+//   console.log("f1")
+//   return x
+// }
+// function f2(y) {
+//   console.log(y)
+//   console.log("f2")
+//   return y
+// }
+// function f3(z) {
+//   console.log(z)
+//   console.log("f3");
+//   return z
+// }
 
 
 export function compose(...funcs) {
@@ -74,10 +73,9 @@ export function compose(...funcs) {
     b(a(...args))
   )
 }
-
-  // 输出 1， 2， 3
-  // 之前的函数的执行结果是后面函数的参数
-  // let res = compose(f1,f2,f3)('tt')
+// 输出 1， 2， 3
+// 之前的函数的执行结果是后面函数的参数
+// let res = compose(f1,f2,f3)('tt')
 
 export function applyMiddleware(...middlewares) {
   return createStore =>(...args) => {
@@ -88,9 +86,11 @@ export function applyMiddleware(...middlewares) {
       dispatch: store.dispatch,
     }
     // 使中间件可以获取状态值，派发action
-
     const middlewareChain = middlewares.map(middleware => middleware(midApi))
     // compose 可以把 middlewareChain 函数数组合并成一个函数
+    // 重写了dispatch 函数
+    // dispatch 函数是原来的dispatch函数
+    // 增强了dispatch 函数的能力
     dispatch = compose(...middlewareChain)(dispatch)
     return {
       ...store,
@@ -99,14 +99,16 @@ export function applyMiddleware(...middlewares) {
   }
 }
 
-function logger(){
-  return dispatch => action => {
-    if(action.type) {
-      console.log(action.type + "执行了")
-    }
-    return dispatch(action)
-  }
-}
 
 
 // 自己写一些中间件来实现
+// 比方说logger
+// function logger(midApi){
+//   return dispatch => action => {
+//     if(action.type) {
+//       console.log(action.type + "执行了")
+//     }
+//     return dispatch(action)
+//   }
+// }
+

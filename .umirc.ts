@@ -69,8 +69,6 @@ const config =  {
               name: '表单受控组件',
               component: './myStudy/FormTest/index',
             },
-
-      
             {
               path: '/study/life',
               name: '生命周期',
@@ -96,6 +94,13 @@ const config =  {
               name: 'Context',
               component: './myStudy/contextTest/index',
             },
+            {
+              path: '/study/getChildContext',
+              name: 'getChildContext and withContext',
+              component: './myStudy/GetChildContext/index',
+            },
+            
+
             {
               path: '/study/HOC',
               name: '高阶组件-HOC',

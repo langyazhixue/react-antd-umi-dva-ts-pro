@@ -9,6 +9,13 @@ export default class ReduxPage extends Component {
       // this.setState({});
     })
   }
+  asyAddHandle = () => {
+    store.dispatch(dispatch => {
+      setTimeout(() => {
+        dispatch({type:'add'})
+      },1000)
+    })
+  }
   render() {
     // console.log("store", store);
     return (
@@ -18,6 +25,7 @@ export default class ReduxPage extends Component {
         <p>{store.getState()}</p>
         <button onClick={() => store.dispatch({ type: "add" })}>add</button>
         <button onClick={() => store.dispatch({ type: "minus" })}>minus</button>
+        <button onClick={this.asyAddHandle}>asyAdd</button>
       </div>
     );
   }

@@ -1,5 +1,6 @@
-import { createStore } from "../../../KRedux/kRedux";
+import { createStore,applyMiddleware } from "../../../KRedux/kRedux";
 import { counterReducer } from "./counterReducer";
-const store = createStore(counterReducer)
+import { logger,thunk } from '../../../KRedux/middlewares'
+const store = createStore(counterReducer,applyMiddleware(logger,thunk))
 
 export default store;

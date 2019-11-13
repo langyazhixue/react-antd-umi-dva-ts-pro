@@ -18,7 +18,6 @@ const { Content } = Layout
 //     </div>
 //   );
 // };
-
 const query = {
   'screen-xs': {
     maxWidth: 575,
