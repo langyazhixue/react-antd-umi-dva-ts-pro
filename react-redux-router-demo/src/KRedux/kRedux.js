@@ -18,9 +18,12 @@ export function createStore(reducer,enhancer) {
   function getState(){
     return currentState
   }
+  // 订阅
   function subscribe(listener){
     currentListeners.push(listener)
   }
+  // 广播
+  // 在dispatch 的时候 currentListeners 执行
   function dispatch(action) {
     currentState = reducer(currentState, action)
     currentListeners.forEach(v => v())
@@ -79,6 +82,7 @@ export function compose(...funcs) {
 
 export function applyMiddleware(...middlewares) {
   return createStore =>(...args) => {
+    // ...args = reducer
     const store = createStore(...args)
     let dispatch = store.dispatch
     const midApi = {
