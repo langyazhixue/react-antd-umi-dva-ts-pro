@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-// Props属性传递可 于  组件相互通信
-// 如果 组件传递的是函数，则可以把 组件信息传  组件，这 个常称为状态提升，StateMgt.js
+// Props属性传递可用于组件相互通信
+// 如果父组件传递的是函数，则可以把子组件信息传入父组件，这个通常称为状态提升，StateMgt.js
 // context 跨层级组件之间通信
-// redux:
+// redux: 类似于Vuex, 无明显关系的组件间通信
 class Child extends Component{
   // constructor(props) {
   //   super(props)

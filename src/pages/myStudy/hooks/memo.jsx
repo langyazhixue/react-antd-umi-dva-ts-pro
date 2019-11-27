@@ -34,7 +34,7 @@ class MemoTest extends Component {
         <p>{this.state.date.toLocaleTimeString()}</p>
         <MemoCounter counter={this.state.counter} />
         <div>
-          <h2>测试useMemeo</h2>
+          <h2>测试useMemo</h2>
           <div>
             <WithUseMemo />
           </div>
@@ -59,7 +59,6 @@ class MemoTest extends Component {
 // 要让自组件不更新
 // React.memo 是一个高阶组件
 // 是做的一个浅比较
-
 const MemoCounter = React.memo(props => {
   console.log(props.counter);
   return <div>{props.counter}</div>;
@@ -72,6 +71,7 @@ function WithUseMemo() {
 
   const [count11, setCount11] = useState(1);
   const [val, setValue] = useState('');
+  // 类似于Vue的computed
   const expensive = useMemo(() => {
     console.log('compute');
     let sum = 0;
@@ -143,20 +143,8 @@ function WithUseCallbackParent() {
   </div>;
 }
 
-
-// function Child({ count33 }) {
-//   // const [count44, setCount44] = useState(() => callback());
-//   // useEffect(() => {
-//   //   console.log('useCallback')
-//   //   setCount44(callback());
-//   // }, [callback]);
-//   console.log(count33)
-//   return <div>
-//       {count33}
-//   </div>
-// }
-
 function Child({ callback }) {
+  // 说明当count3执行的时候，callback也修改了
   const [count44, setCount44] = useState(() => callback());
   useEffect(() => {
     console.log('useCallback')

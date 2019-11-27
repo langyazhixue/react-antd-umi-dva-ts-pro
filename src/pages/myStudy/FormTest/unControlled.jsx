@@ -8,7 +8,6 @@ import React, { Component } from 'react';
 // 默认值
 // 在 React 渲染生命周期时，表单元素上的 value 将会覆盖 DOM 节点中的值，在非受控组件中，你经常希望 React 能赋予组件一个初始值，但是不去控制后续的更新。
 // 在这种情况下, 你可以指定一个 defaultValue 属性，而不是 value。
-
 // 文件输入
 
 class UnControlledForm extends Component {

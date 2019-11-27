@@ -5,11 +5,13 @@ import PropTypes from 'prop-types'
 // getChildContext指定的传递给子组件的属性需要先通过childContextTypes来执行，不然会报错。
 class GetChildContext extends Component {
   static childContextTypes = {
-    name:PropTypes.string
+    name:PropTypes.string,
+    address:PropTypes.string
   }
   getChildContext(){
     return {
-      name:'lily'
+      name:'lily',
+      address:'fff'
     }
   }
   render() {
@@ -23,9 +25,10 @@ class GetChildContext extends Component {
 }
 
 class ChildB extends Component {
-  //在子组件中用于说明context接收的数据类型
+  //在子组件中用于说明context接收的数据类型，必须的
   static contextTypes =  {
-    name: PropTypes.string
+    name: PropTypes.string,
+    address:PropTypes.string
   }
   render() {
     console.log(this.context)
@@ -41,9 +44,10 @@ class ChildB extends Component {
 
 
 class ChildC extends Component {
-  //在子组件中用于说明context接收的数据类型
+  //在子组件中用于说明context接收的数据类型，必须的
   static contextTypes =  {
-    name: PropTypes.string
+    name: PropTypes.string,
+    address:PropTypes.string
   }
   // 可以接收到 this.context
   render() {

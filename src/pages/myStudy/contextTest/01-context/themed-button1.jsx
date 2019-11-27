@@ -32,6 +32,7 @@ class Child1 extends Component {
 
 // 基本使用方法，声明contextTypes，在函数或者render中通过this.context调用
 class Child2 extends Component {
+  // 声明静态属性
   static contextTypes = {
     theme: PropTypes.object.isRequired
   }

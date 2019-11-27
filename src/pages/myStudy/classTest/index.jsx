@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import style from './index.less';
 import yay from '@/assets/yay.jpg';
-// class组件通常拥有状态和 命周期，继承于Component，实现 render 法
+// class组件通常拥有状态和生命周期，继承于Component，实现 render 方法
 
-// 组件状态管:如果组件中数据会变化，并影响  内容，则组件需要拥有状态 (state)并维护状态。
-// class组件使 state和setState维护状态
+// 组件状态管:如果组件中数据会变化，并影响组件内容，则组件需要拥有状态(state)并维护状态
+// class组件使用state和setState维护状态
 // setState(object nextState[, function callback])
 // 不能在组件内部通过this.state修改状态，因为该状态会在调用setState()后被替换。
 
@@ -17,8 +17,8 @@ import yay from '@/assets/yay.jpg';
 // 事件处理
 // React中使 onXX写法来监听事件。
 // 事件回调函数注意绑定this指向，常用三种方法:
-// 1. 构造函数中绑定并覆盖:this.change= this.change.bind(this)
-// 2.  法定义为箭头函数:change=()=>{}
+// 1. 构造函数中绑定并覆盖:this.change = this.change.bind(this)
+// 2.  方法定义为箭头函数:change =()=>{}
 // 3. 事件中定义为箭头函数:onChange={()=>this.change()}
 // react 遵循单项数据流，没有双向绑定，输入框要设置value和 onChange，称为受控组件
 
@@ -72,8 +72,10 @@ export default class ClassComponent extends Component {
     function MyFunTest(props) {
       return props.user.firstName + ' ' + props.user.lastName;
     }
+    // jsx也是表达式
     const greet = <p>hello, Jerry</p>;
     const arr = [1, 2, 3].map(num => <li key={num}>{num}</li>);
+    // 解构赋值
     const { date, name, counter } = this.state;
     return (
       <div className={style.myClassComtainer}>

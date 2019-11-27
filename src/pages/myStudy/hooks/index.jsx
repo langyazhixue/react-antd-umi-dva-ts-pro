@@ -42,7 +42,7 @@ export default function HookSTest(props) {
     // [name] 是说明要在name改变的时候才进入
   }, [name]);
 
-  const [myCounter, setMyCounter] = useMyCounter();
+  const [myCounter, setMyCounter] = useMyCounter(0);
 
   const reducer = function(state, action) {
     switch (action.type) {
@@ -61,7 +61,9 @@ export default function HookSTest(props) {
   const [state, dispatch] = useReducer(reducer, {
     counter: 0,
   });
-const initCount = 0
+
+  const initCount = 0
+
   return (
     <div>
       <p>You clicked {counter} times</p>
@@ -73,7 +75,7 @@ const initCount = 0
         <h2>自定义Hook测试</h2>
         <div>
           <p>You clicked {myCounter} times</p>
-          <button onClick={() => setMyCounter(dispatch + 1)}>Click me</button>
+          <button onClick={() => setMyCounter(myCounter + 1)}>Click me</button>
         </div>
       </div>
 

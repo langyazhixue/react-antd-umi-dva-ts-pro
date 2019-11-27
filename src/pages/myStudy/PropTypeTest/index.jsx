@@ -9,10 +9,11 @@ class MyChildTest extends Component {
         <p>{this.props.user.name}</p>
         <p>{this.props.myType}</p>
       </div>
-    );
+    )
   }
 }
 // 定义组件的默认props
+// 跟Vue一样定义默认的props
 MyChildTest.defaultProps = {
   title: '标题',
   tel: '19009889877',
@@ -22,15 +23,14 @@ MyChildTest.defaultProps = {
   myType:'News'
 };
 
+// 跟Vue 一样定义默认的props
+// 并指定类型
 MyChildTest.propTypes = {
   title: PropTypes.string,
   tel: PropTypes.string,
   user: PropTypes.object,
   myType: PropTypes.oneOf(['News', 'Photos']),
 };
-
-
-
 
 class index extends Component {
   render() {

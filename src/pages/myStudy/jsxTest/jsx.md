@@ -11,20 +11,19 @@
 ```js
 React.createElement(
   MyButton,
+  // 属性
   {color: 'blue', shadowSize: 2},
   'Click Me'
 )
-
 ```
 
 如果没有子节点，你还可以使用自闭合的标签形式，如：
 
 ```js
 <div className="sidebar" />
-
 ```
-会被编译称为
 
+会被编译称为
 ```js
 React.createElement(
   'div',
@@ -111,6 +110,7 @@ function BlueDatePicker() {
   
   ```js
   const Button = props => {
+    // 解构赋值
   const { kind, ...other } = props;
   const className = kind === "primary" ? "PrimaryButton" : "SecondaryButton";
   return <button className={className} {...other} />;
@@ -128,7 +128,6 @@ function BlueDatePicker() {
   ```
 
 ### JSX中的子元素
-
 包含在开始和结束标签之间的JSX 表达式内容将作为特定属性props.childrn传递给外层组件
 1. 你可以将字符串放在开始和结束标签之间，此时 props.children 就只是该字符串。这对于很多内置的 HTML 元素很有用。例如：
 
@@ -163,7 +162,6 @@ js 表达式可以被包裹在`{}`中作为子元素。例如，以下表达式�
 
 ```js
 <MyComponent>foo</MyComponent>
-
 <MyComponent>{'foo'}</MyComponent>
 ```
 
@@ -173,7 +171,6 @@ js 表达式可以被包裹在`{}`中作为子元素。例如，以下表达式�
 function Item(props) {
   return <li>{props.message}</li>;
 }
-
 function TodoList() {
   const todos = ['finish doc', 'submit pr', 'nag dan to review'];
   return (
@@ -188,11 +185,11 @@ JavaScript 表达式也可以和其他类型的子元素组合。这种做法可
 
 ```js
 function Hello(props) {
-  return <div>Hello {props.addressee}!</div>;
+  return <div>Hello {props.addressee}!</div>
 }
 ```
-5. 函数作为子元素
 
+5. 函数作为子元素
 通常，JSX 中的 JavaScript 表达式将会被计算为字符串、React 元素或者是列表。不过，props.children 和其他 prop 一样，它可以传递任意类型的数据，而不仅仅是 React 已知的可渲染类型。例如，如果你有一个自定义组件，你可以把`回调函数`作为 props.children 进行传递
 
 ```js

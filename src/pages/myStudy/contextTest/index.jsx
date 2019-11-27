@@ -23,13 +23,12 @@ class ContextTest extends Component{
             ? themes.light
             : themes.dark,
       }));
-    };
-
+    }
     // State 也包含了更新函数，因此它会被传递进 context provider。
     this.state = {
       theme: themes.light,
       toggleTheme: this.toggleTheme,
-    };
+    }
   }
 
   render() {

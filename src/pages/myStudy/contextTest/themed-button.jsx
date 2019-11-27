@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { MyConsumer,MyContext } from './context';
+// import  PropsTypes from 'prop-types'
 // 挂载在 class 上的 contextType 属性会被重赋值为一个由 React.createContext() 创建的 Context 对象。
 // 这能让你使用 this.context 来消费最近 Context 上的那个值
 // MyConsumer 可以用在 函数式组件上
@@ -29,6 +30,7 @@ function ThemedToggleButton(props) {
 
 class Child1 extends Component {
   static contextType = MyContext
+  // static contextType = MyContext
   render() {
     console.group('Child1');
     console.log(this.context)
@@ -64,7 +66,7 @@ class Child3 extends Component {
 class Child2 extends Component {
   render() {
     console.group('Child2');
-    console.log(this.context);
+    console.log(this.context);//  拿不到
     return (
       <div className={style.child2}>
         <h2>Child2</h2>

@@ -25,7 +25,6 @@ export const connect = (mapStateToProps = state =>state, mapDispatchToProps = {}
       const { store } = this.context
       // state = > ({num: state.counter})
       const stateProps = mapStateToProps(store.getState())
-      
       // { add:() => (type:'add') }
       const dispatchProps = bindActionCreators(mapDispatchToProps, store.dispatch) 
       this.setState({

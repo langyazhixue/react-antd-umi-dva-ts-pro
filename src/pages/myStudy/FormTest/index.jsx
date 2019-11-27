@@ -50,7 +50,6 @@ class NameForm extends Component {
               名字:
               <input type="text" value={this.state.value} onChange={this.handleChange} />
             </label>
-           
           </div>
 
           <div>
@@ -62,7 +61,6 @@ class NameForm extends Component {
           </div>
           <input type="submit" value="提交" />
         </form>
-
         <UnControlledForm/>
       </div>
     );

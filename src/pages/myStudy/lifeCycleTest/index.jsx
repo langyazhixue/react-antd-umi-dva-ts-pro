@@ -8,11 +8,16 @@ import React, { Component } from 'react';
 // 5. componentDidMount
 // 6. componentWillReceiveProps  父亲组件有新的props 传递下来
 // 7. shouldComponentUpdate
-// 8 componentWillUpdate
-// 9 render
+// 8  componentWillUpdate
+// 9  render
 // 10 componentDidUpdate
-// 11 componentWillUnmount
+// 11 componentWillUnmount // 组件卸载前的生命周期
 // 12 结束
+
+//  生命周期变更缘由
+// 原来(React v16.0前)的⽣生命周期在React v16推出的Fiber之后 就不不合适了了，
+// 因为如果要开启async rendering，在render函数 之前的所有函数，都有可能被执行多次
+
 
 // 16.4 以后的生命周期：
 // 用 getDerivedStateFromProps 代替
@@ -21,6 +26,8 @@ import React, { Component } from 'react';
 // getSnapshotBeforeUpdate 代替 shouldComponentUpdate
 // 变更缘由：React Fiber https://zhuanlan.zhihu.com/p/26027085
 
+
+import SnapshotSample from './SnapshotSample.jsx'
 class Child extends Component {
   constructor(props){
     super(props)
@@ -57,6 +64,8 @@ static getDerivedStateFromProps (nextProps,prevState) {
     }
   }
   // 在render之后，在componentDidUpdate之前
+  // 新的getSnapshotBeforeUpdate生命周期在更新之前被调用(例如,在DOM被更新之前)。
+  // 此生命周期的返回值将作为第三个参数传递给componentDidUpdate。
   getSnapshotBeforeUpdate(prevProps, prevState){
     console.group('childgetSnapshotBeforeUpdate')
     console.log(prevProps)
@@ -73,6 +82,7 @@ static getDerivedStateFromProps (nextProps,prevState) {
     console.log('chidldUpdate')
   }
   render(){
+    console.log('render')
     console.log(this.props)
     console.log(this.state)
     return (
@@ -91,31 +101,18 @@ class LifeCycleTest extends Component {
       },
     };
   }
-  // 组件创建时和更新时的render 法之前调 ，它应该返回一个对象来更 新状态，或者返回null来不更新任何内容。
+
+  // UNSAFE_componentWillMount() {
+  //   console.log('willMount')
+  // }
+
+  // 组件创建时和更新时的render方法之前调 ，它应该返回一个对象来更新状态，或者返回null来不更新任何内容。
   // 这个功能实际上就是将传入的props映射到state上面
   // 当state需要从props初始化时，使用
   static getDerivedStateFromProps (nextProps,prevState) {
     console.log('11')
     return null
   }
-
-  // 在render之后，在componentDidUpdate之前。
-  // 最近一次渲染输出(提交到 DOM 节点)之前调 。
-  // 它使得组件能在发生更改之前从 DOM 中捕获一些信息( 如，滚动位置)。
-  // 此生命周期的任何返回值 将作为参数传递给 `componentDidUpdate`
-  // 获取render之前的dom状态
-  getSnapshotBeforeUpdate(prevProps, prevState){
-    return 111111
-  }
-
-  // componentDidMount(arg){
-  //   console.log(arg)
-  //   console.log('didMount')
-  // }
-  // UNSAFE_componentWillMount() {
-  //   console.log('willMount')
-  // }
-
 
   // componentWillReceiveProps在初始化render的时候不会执行，它会在Component接受到新的状态(Props)时被触发
   // 一般用于父组件状态更新时子组件的重新渲染。
@@ -131,6 +128,21 @@ class LifeCycleTest extends Component {
   // UNSAFE_componentWillUpdate() {
   //   console.log('willUpdate');
   // }
+
+  // componentDidMount(arg){
+  //   console.log(arg)
+  //   console.log('didMount')
+  // }
+  
+
+  // 在render之后，在componentDidUpdate之前。
+  // 最近一次渲染输出(提交到 DOM 节点)之前调 。
+  // 它使得组件能在发生更改之前从 DOM 中捕获一些信息( 如，滚动位置)。
+  // 此生命周期的任何返回值 将作为参数传递给 `componentDidUpdate`
+  // 获取render之前的dom状态
+  getSnapshotBeforeUpdate(prevProps, prevState){
+    return 111111
+  }
 
   componentDidUpdate() {
 
@@ -161,6 +173,10 @@ class LifeCycleTest extends Component {
         <div>
           <h1>子组件</h1>
           <Child user={user}/>
+        </div>
+        <div>
+          <h1>getSnapshotBeforeUpdate Demo</h1>
+          <SnapshotSample/>
         </div>
       </div>
     );
