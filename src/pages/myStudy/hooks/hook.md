@@ -40,3 +40,4 @@
 
 > 是的，默认情况下，它在第一次渲染之后和每次更新之后都会执行。（我们稍后会谈到如何控制它。）你可能会更容易接受 effect 发生在“渲染之后”这种概念，不用再去考虑“挂载”还是“更新”。React 保证了每次运行 effect 的同时，DOM都已经更新完毕。
 
+// HookAPI: useState useEffect useMemo useCallback useContext useReducer 

@@ -11,7 +11,7 @@ import reduxStore from './pages/KReduxPage/store/kReactReduxStore'
 
 ReactDOM.render(
   <Provider store={reduxStore}>
-  <App />
+    <App />
   </Provider>,document.getElementById('root')
 )
 

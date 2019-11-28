@@ -99,8 +99,6 @@ const config =  {
               name: 'getChildContext and withContext',
               component: './myStudy/GetChildContext/index',
             },
-            
-
             {
               path: '/study/HOC',
               name: '高阶组件-HOC',
@@ -161,6 +159,16 @@ const config =  {
               path: '/study/ReactDomAPI',
               name: 'ReactDomAPI测试',
               component: './myStudy/ReactDomAPITest/index',
+            },
+            {
+              path: '/study/Ktree',
+              name: '树形组件',
+              component: './myStudy/KTree/index',
+            },
+            {
+              path: '/study/ComponentOptimizin',
+              name: '常见的组件优化技术',
+              component: './myStudy/ComponentOptimizin/index',
             }
           ]
         }

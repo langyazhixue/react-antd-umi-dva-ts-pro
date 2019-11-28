@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// 链式调用
 function Child(props) {
   console.log(props)
   return <div style={{color:'green'}}>Child</div>;

@@ -52,5 +52,4 @@ function Counter(initialCount){
     </React.Fragment>
   )
 }
-
 export default Counter

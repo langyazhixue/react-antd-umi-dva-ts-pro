@@ -42,6 +42,7 @@ export default function HookSTest(props) {
     // [name] 是说明要在name改变的时候才进入
   }, [name]);
 
+  // 独立出来的自定义hook
   const [myCounter, setMyCounter] = useMyCounter(0);
 
   const reducer = function(state, action) {

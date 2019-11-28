@@ -157,8 +157,18 @@ export default class BaseMenu extends PureComponent {
             </Link>
           </Menu.Item>
 
+          <Menu.Item key="Ktree">
+            <Link to="/study/Ktree">
+              <span>树形组件</span>
+            </Link>
+          </Menu.Item>
 
-
+          <Menu.Item key="ComponentOptimizin">
+            <Link to="/study/ComponentOptimizin">
+              <span>常见的组件优化技术</span>
+            </Link>
+          </Menu.Item>
+          
         </SubMenu>
       </Menu>
     );

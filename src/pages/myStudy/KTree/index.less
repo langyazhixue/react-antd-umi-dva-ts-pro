@@ -1,0 +1,21 @@
+.nodeInner {
+  cursor: pointer;
+}
+
+.children {
+  margin-left: 20px;
+}
+.triClose:after,
+.triOpen:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-left: 8px solid black;
+  border-bottom: 6px solid transparent;
+}
+
+.triOpen:after {
+  transform: rotate(90deg);
+}

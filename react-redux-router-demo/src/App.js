@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 // import ReduxPage from './pages/ReduxPage/ReduxPage';
 // import ReactReduxStore from './page
-// import KReactPage from './pages//KReduxPage/KReduxPage'
+// import KReactPage from './pages/KReduxPage/KReduxPage'
 import KReactReduxPage from './pages/KReduxPage/KReactReduxPage'
 
 function App() {

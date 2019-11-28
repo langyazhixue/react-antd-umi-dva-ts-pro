@@ -24,8 +24,10 @@ class Dialog extends Component {
     const { children } = this.props
     const childrenList = React.Children.map(children, (child) => {
       // 可以加入一些新的props 
+      console.group('child')
+      console.log(child)
       return React.cloneElement(child,{
-        MyId:'test'
+        id:'test'
       })
     })
     return (
@@ -38,7 +40,7 @@ class Dialog extends Component {
 
 function SubItem (props) {
   return (
-    <li id={props.MyId}>{props.name}</li>
+    <li id={props.id}>{props.name}</li>
   )
 }
 
@@ -47,6 +49,7 @@ class MyReactChildren extends Component {
     return (
       <div>
         <Dialog>
+          <div>test</div>
           <SubItem name='lily'/> 
           <SubItem name='lili'/>       
         </Dialog>

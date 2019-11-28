@@ -42,4 +42,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 // connect 返回一个新函数，可以接收一个等待包装的组件
+// connect 是一个返回高阶函数的函数
 export default connect(mapStateToProps, mapDispatchToProps)(ReactReduxStore)

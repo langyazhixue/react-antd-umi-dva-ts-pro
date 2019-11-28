@@ -43,7 +43,6 @@ class MyFormPage extends Component {
               <input type="text" />
             </div>,
           )}
-
           {getFieldDecorator('password', {
             rules: [passwordRules],
           })(

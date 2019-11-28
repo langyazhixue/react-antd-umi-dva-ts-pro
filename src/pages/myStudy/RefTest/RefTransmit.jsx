@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 // 组件库维护者的注意事项
 // 1. 当你开始在组件库中使用forwardRef时候，你应当将其视为一个破坏性更改，并发布库的一个新的主版本
 const FancyButton = React.forwardRef((props, ref) => {
+  // props 中 不包括 ref
   console.group('FancyButton');
   console.log(props);
   const handlerClick = () => {

@@ -151,6 +151,7 @@ const foo2 = Cmp => props => {
 function MyHook() {
   const [value, setValue] = useState('');
   const CloneElemntFun = <input />;
+  // cloneElement 传入的第一个值是一个React元素
   const MyCloneElelement = React.cloneElement(CloneElemntFun, {
     value: value,
     name: 'cloneElement',
@@ -175,7 +176,7 @@ function MyCloneElementTest() {
 // 通过 React.cloneElement 向子组件传递 state 及 function
 
 // React.Fragment
-// React.Fragment 组件能够在不额外创建 DOM 元素的情况下，让 render() 方法中返回多个元素
+// React.Fragment 组件能够在不额外创建 DOM 元素的情况下，让 render()方法中返回多个元素
 
 function ReactFragementTest() {
   return (

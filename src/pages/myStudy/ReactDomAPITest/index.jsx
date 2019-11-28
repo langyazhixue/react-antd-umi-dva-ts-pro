@@ -17,7 +17,7 @@ console.log(ReactDOM)
 // 大多数情况下，你可以绑定一个 ref 到 DOM 节点上，可以完全避免使用 findDOMNode。
 
 // 6. createPortal()
-// 创建 portal。Portal 将提供一种将子节点渲染到 DOM 节点中的方式，该节点存在于 DOM 组件的层次结构之外。
+// 创建 portal，Portal 将提供一种将子节点渲染到 DOM 节点中的方式，该节点存在于 DOM 组件的层次结构之外。
 class Child extends Component {
   render() {
     return (
@@ -26,7 +26,7 @@ class Child extends Component {
   }
 }
 class ReactDomAPITest extends Component {
-  removeClid =() => {
+  removeClid = () => {
     // 卸载掉整个APP
     ReactDOM.unmountComponentAtNode(document.getElementById('app'))
   }
