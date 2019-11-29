@@ -11,7 +11,6 @@ export function createStore(reducer,enhancer) {
   }
   // 保存状态
   let currentState = undefined
-
   // 回调函数
   let currentListeners = []
 
@@ -19,7 +18,8 @@ export function createStore(reducer,enhancer) {
     return currentState
   }
   // 订阅
-  function subscribe(listener){
+  function subscribe(listener) {
+    // listener 是一个函数
     currentListeners.push(listener)
   }
   // 广播
@@ -29,7 +29,8 @@ export function createStore(reducer,enhancer) {
     currentListeners.forEach(v => v())
     return action   
   }
-  dispatch({type:'@IMOOC/KKB-REDUX'}) // 为了展示初始值
+
+  dispatch({type: '@IMOOC/KKB-REDUX'}) // 为了展示初始值
   return {
     getState,
     subscribe,
@@ -64,7 +65,7 @@ export function createStore(reducer,enhancer) {
 //   return z
 // }
 
-
+// 聚合函数
 export function compose(...funcs) {
   if (funcs.length === 0) {
     return arg => arg
@@ -78,6 +79,7 @@ export function compose(...funcs) {
 }
 // 输出 1， 2， 3
 // 之前的函数的执行结果是后面函数的参数
+// compose(f1,f2,f3) 返回的是一个函数
 // let res = compose(f1,f2,f3)('tt')
 
 export function applyMiddleware(...middlewares) {
@@ -87,7 +89,7 @@ export function applyMiddleware(...middlewares) {
     let dispatch = store.dispatch
     const midApi = {
       getState: store.getState,
-      dispatch: store.dispatch,
+      dispatch: store.dispatch
     }
     // 使中间件可以获取状态值，派发action
     const middlewareChain = middlewares.map(middleware => middleware(midApi))

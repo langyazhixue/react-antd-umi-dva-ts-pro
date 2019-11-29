@@ -16,7 +16,7 @@ import React, { Component } from 'react';
 // 4. React.Children.only
 // 验证 children 是否只有一个子节点（一个 React元素），如果有则返回它，否则此方法会抛出错误。
 
-// 5. React.Children.toArray
+// 5.React.Children.toArray
 // React.Children.toArray(children)
 
 class Dialog extends Component {

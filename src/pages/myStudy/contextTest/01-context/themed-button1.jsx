@@ -45,7 +45,4 @@ class Child2 extends Component {
 
 ThemedButton.contextType = MyContext;
 
-
-
-
 export default ThemedButton;

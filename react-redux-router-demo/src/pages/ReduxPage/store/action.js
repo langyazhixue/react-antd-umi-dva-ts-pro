@@ -1,6 +1,7 @@
 export const add = () => ({ type: "add" })
 export const minus = () => ({ type: "minus" })
-export const asycAdd = () => dispatch => {
+// 异步可以返回一个函数
+export const asyncAdd = () => dispatch => {
   setTimeout(() => {
     dispatch({ type: "add" })
   }, 1000)

@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 // 子节点的打开状态可以通过给组件一个open状态来维护。
 
 import KTreeNode from './kTreeNode.jsx'
-import './index.less'
+
 const treeData = {
   key: '1', // 
   title:'全国',

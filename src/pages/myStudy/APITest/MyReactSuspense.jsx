@@ -9,22 +9,22 @@ import React, { Component } from 'react'
   // 1. React.Suspense 可以指定加载指示器（loading indicator），以防其组件树中的某些子组件尚未具备渲染条件
   // 2. 目前，懒加载组件是 <React.Suspense> 支持的唯一用例
 
-  const OtherComponent = React.lazy(() => import('./LazyComponent'))
+const OtherComponent = React.lazy(() => import('./LazyComponent'))
   function Spinner() {
     return (
       <h2>spinner</h2>
     )
   }
   class MyReactSuspense extends Component {
-  render(){
+    render(){
       return (
         <React.Suspense fallback={< Spinner />}>
         <div>
           <OtherComponent/>
         </div>
-      </React.Suspense>
+        </React.Suspense>
       )
-  }
+    }
 }
 
 export default MyReactSuspense
