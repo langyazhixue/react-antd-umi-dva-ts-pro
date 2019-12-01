@@ -5,12 +5,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
-//import { Provider } from './KRedux/kReact-redux'
-import reduxStore from './pages/ReduxPage/store/reactReduxStore.js'
-// import reduxStore from './pages/KReduxPage/store/kReactReduxStore'
+import store from './store/index'
 
 ReactDOM.render(
-  <Provider store={reduxStore}>
+  <Provider store={store}>
     <App />
   </Provider>,document.getElementById('root')
 )
