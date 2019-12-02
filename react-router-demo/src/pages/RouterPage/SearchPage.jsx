@@ -11,8 +11,9 @@ function Detail() {
 }
 class SearchPage extends Component {
   render() {
-    const { match } = this.props;
+    const { match,history } = this.props;
     console.log(match)
+    console.log(history)
     const { id } = match.params;
     return (
       <div>
