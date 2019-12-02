@@ -5,11 +5,11 @@ class LoginPage extends Component {
   render() {
     console.log(this.props)
     const { isLogin, login, location } = this.props
-
     const { redirect = '/'} = location.state || {}
     console.log(this.props)
     if(isLogin) {
       return (
+        // 自动跳转到新的路由
         <Redirect to={redirect}/>
       )
     } else {

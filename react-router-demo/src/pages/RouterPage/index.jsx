@@ -1,45 +1,43 @@
 import React, { Component } from 'react';
+
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+
 // react-router 中奉行一切介是组件的思想
-// 路由器器-Router、链 接-Link、路路由-Route、独占-Switch、重定向-Redirect都 以组件形式存在
+// 路由器器-Router、链接-Link、路由-Route、独占-Switch、重定向-Redirect都 以组件形式存在
 // Route渲染优先级:children>component>render
-// 404
 import HomePage from './HomePage';
 import UserPage from './UserPage';
-import LoginOut from './LoginOut';
 import SearchPage from './SearchPage';
 import PrivateRoute from './PrivateRoute';
+import LoginOut from './LoginOut';
 import LoginPage from './LoginPage';
 class RouterPage extends Component {
   render() {
-    const searchId = '1234';
+    const searchID = '1234';
     return (
       <div>
         <h1>RouterPage</h1>
-        <BrowserRouter>
+        <BrowserRouter createElement={createElement}>
           <nav>
-            <Link to="/" >
-              ⾸页
-            </Link>
-            <Link to="/user" >
-              ⽤户中心
-            </Link>
-            <Link to={'/search/' + searchId}>搜索</Link>
-            <Link to="/aaa">不知道的页面</Link>
+            <Link to="/">⾸页</Link>
+            <Link to="/user">⽤户中心</Link>
+            <Link to={'/search/' + searchID}>搜索中心</Link>
+            <Link to='/ddd'>404</Link>
           </nav>
-          {/* 设定一个没有path的路由在路由列表最后面，表示一定匹配 */}
           <Switch>
-            <PrivateRoute exact path="/" component={HomePage} />
-            {/* 用户中心必须先登录 */}
-            {/* 实现一个退出登录 */}
-            <PrivateRoute  path="/user" component={LoginOut} />
-            <PrivateRoute path="/search/:id" component={SearchPage} />
+            <Route exact path="/" component={HomePage} />
+            <PrivateRoute path="/user" component={LoginOut} />
+            <Route path="/search/:id" component={SearchPage} />
             <Route path="/login" component={LoginPage} />
-            <Route component={() => <h1>404</h1>} />
+            <Route  component={() => <div>404</div>} />
           </Switch>
         </BrowserRouter>
       </div>
     );
   }
+}
+function createElement(Component, props) {
+  console.log('走');
+  return <Component {...props} />;
 }
 export default RouterPage;
