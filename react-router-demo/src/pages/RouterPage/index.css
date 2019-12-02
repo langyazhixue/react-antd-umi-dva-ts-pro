@@ -1,0 +1,12 @@
+.main {
+  text-align: center;
+  /* color: yellow */
+}
+
+.linkActive {
+  color: #09d3ac;
+}
+.nav-link {
+  margin-right: 20px;
+ }
+
