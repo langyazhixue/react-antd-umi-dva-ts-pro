@@ -1,5 +1,5 @@
 import { createBrowserHistory } from 'history';
-import React,{ useContext } from 'react';
+import React, { useContext } from 'react';
 const RouterContext = React.createContext();
 
 export class KBrowserRouter extends React.Component {
@@ -9,7 +9,10 @@ export class KBrowserRouter extends React.Component {
     this.state = {
       location: this.history.location,
     };
+    // 订阅
     this.unlisten = this.history.listen(location => {
+      console.group('listen')
+      console.log(location)
       this.setState({ location });
     });
   }
@@ -18,6 +21,7 @@ export class KBrowserRouter extends React.Component {
       this.unlisten();
     }
   }
+  // value 有修改。会触发组件重新渲染
   render() {
     return (
       <RouterContext.Provider
@@ -33,41 +37,35 @@ export class KBrowserRouter extends React.Component {
 
 // 实现 Route
 export function KRoute(props) {
-  const ctx = useContext(RouterContext)
-  const { path, commponent: Cmp } = props
-  const { location } = ctx
-  console.group('match')
-  console.log(path)
-  console.log(location)
-  let match = path ===location.pathname
-  return match ? <Cmp /> : null 
+  const ctx = useContext(RouterContext);
+  const { path, commponent: Cmp } = props;
+  const { location } = ctx;
+  console.group('match');
+  console.log(path);
+  console.log(location);
+  let match = path === location.pathname;
+  return match ? <Cmp /> : null;
 }
 
 // 实现 Link
 
 export class KLink extends React.Component {
-  handleClick = (event,history) => {
-    event.preventDefault()
-    history.push(this.props.to)
-  }
-  render(){
-    const { to, children } = this.props
+  handleClick = (event, history) => {
+    event.preventDefault();
+    history.push(this.props.to);
+  };
+  render() {
+    const { to, children } = this.props;
     return (
       <RouterContext.Consumer>
-        {
-          ctx =>{
-            return (
-              <a 
-              href={to} 
-              onClick={event => this.handleClick(event, ctx.history)}>
+        {ctx => {
+          return (
+            <a href={to} onClick={event => this.handleClick(event, ctx.history)}>
               {children}
-              </a>
-            )
-          }
-        }
+            </a>
+          );
+        }}
       </RouterContext.Consumer>
-    )
+    );
   }
 }
-
-

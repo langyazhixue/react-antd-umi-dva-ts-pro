@@ -57,7 +57,7 @@ class RouterPage extends Component {
             <div>
               <LocationTest/>
             </div>
-            <NavLink  exact to="/home" activeClassName = 'linkActive' className='nav-link'>⾸页</NavLink>
+            <NavLink exact to="/home" activeClassName = 'linkActive' className='nav-link'>⾸页</NavLink>
             <NavLink exact to="/user" activeClassName = 'linkActive' className='nav-link'>⽤户中心</NavLink>
             <NavLink exact to={'/search/' + searchID} activeClassName = 'linkActive' className='nav-link'>搜索中心</NavLink>
             <NavLink exact to={{
@@ -74,22 +74,18 @@ class RouterPage extends Component {
           <Switch>
             <Redirect exact from='/' to='/home' />
             <Route exact path="/home">
-              < HomePage/>
+              <HomePage/>
             </Route>
             <Route path="/hooks" render={() => <HooksPage/>} />
             <PrivateRoute path="/user" component={LoginOut} />
             <Route path="/search/:id" component={SearchPage} />
             <Route path="/login" component={LoginPage} />
             <Route path="/test" component={TestPage} />
-            <Route  render={() => <div>404</div>} />
+            <Route render={() => <div>404</div>} />
           </Switch>
         </BrowserRouter>
       </div>
     );
   }
-}
-function createElement(Component, props) {
-  console.log('走');
-  return <Component {...props} />;
 }
 export default RouterPage;
