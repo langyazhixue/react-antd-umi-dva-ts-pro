@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route,useParams } from 'react-router-dom';
 // 嵌套
 // Route 组件 嵌套在其他页面组件中就产生了嵌套关系
+function GetParams () {
+  const { id }  = useParams()
+  return (
+    <div>
+      id: {id}
+    </div>
+  )
+}
+
 function Detail() {
   return (
     <div>
@@ -17,7 +26,10 @@ class SearchPage extends Component {
     const { id } = match.params;
     return (
       <div>
-        <h1>Search:{id}</h1>
+        {/* <h1>Search:{id}</h1> */}
+        <div>
+          <GetParams/>
+        </div>
         <nav>
           <Link to={'/search/'+ id + '/add' }>新增</Link>
           <Link to={'/search/'+ id + '/detail'}>详情</Link>

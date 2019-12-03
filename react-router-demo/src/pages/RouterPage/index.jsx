@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 
-import { BrowserRouter, NavLink , Route, Switch,matchPath } from 'react-router-dom';
+import { BrowserRouter, NavLink , Route, Switch, Redirect,useLocation } from 'react-router-dom';
 import * as ReactRouterDOM from 'react-router-dom'
 // react-router 中奉行一切介是组件的思想
 // 路由器器-Router、链接-Link、路由-Route、独占-Switch、重定向-Redirect都 以组件形式存在
@@ -12,7 +12,19 @@ import PrivateRoute from './PrivateRoute';
 import LoginOut from './LoginOut';
 import LoginPage from './LoginPage';
 import TestPage from './TestPage';
+import HooksPage from './HooksPage'
 import './index.css';
+function LocationTest(){
+  const MyLocation =  useLocation()
+  useEffect(() => {
+    console.log(MyLocation)
+  },[MyLocation])
+  return(
+  <div>
+    MyLocation:{MyLocation.pathname}
+  </div>
+  )
+}
 class RouterPage extends Component {
   //  判断是否激活链接的额外功能
   // isActive =(match, location) => {
@@ -31,6 +43,8 @@ class RouterPage extends Component {
     return (
       <div className = 'main'>
         <h1>RouterPage</h1>
+        <h1>
+        </h1>
         <BrowserRouter 
         basename='/calendar' 
         getUserConfirmation={(message, callback) => {
@@ -40,7 +54,10 @@ class RouterPage extends Component {
           callback(allowTransition);
         }}>
           <nav>
-            <NavLink  exact to="/" activeClassName = 'linkActive' className='nav-link'>⾸页</NavLink>
+            <div>
+              <LocationTest/>
+            </div>
+            <NavLink  exact to="/home" activeClassName = 'linkActive' className='nav-link'>⾸页</NavLink>
             <NavLink exact to="/user" activeClassName = 'linkActive' className='nav-link'>⽤户中心</NavLink>
             <NavLink exact to={'/search/' + searchID} activeClassName = 'linkActive' className='nav-link'>搜索中心</NavLink>
             <NavLink exact to={{
@@ -51,10 +68,15 @@ class RouterPage extends Component {
                 fromDashBord: true
               }
             }} activeClassName = 'linkActive' className='nav-link' >Link测试页面</NavLink>
+             <NavLink exact to='/hooks' activeClassName = 'linkActive' className='nav-link'>Hooks</NavLink>
             <NavLink exact to='/ddd' activeClassName = 'linkActive' className='nav-link'>404</NavLink>
           </nav>
           <Switch>
-            <Route exact path="/"><HomePage/></Route>
+            <Redirect exact from='/' to='/home' />
+            <Route exact path="/home">
+              < HomePage/>
+            </Route>
+            <Route path="/hooks" render={() => <HooksPage/>} />
             <PrivateRoute path="/user" component={LoginOut} />
             <Route path="/search/:id" component={SearchPage} />
             <Route path="/login" component={LoginPage} />
