@@ -16,7 +16,6 @@ class PrivateRoute extends Component {
       return (
         <Redirect
         exact
-        from='/calendar/search/:id'
         to={{
           pathname:'/login',
           state: { redirect: path }

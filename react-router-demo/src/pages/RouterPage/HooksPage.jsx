@@ -1,9 +1,9 @@
-import { useHistory, useLocation, } from 'react-router-dom';
-import React, { useEffect } from 'react';
-
+import { useHistory, useLocation, } from 'react-router-dom'
+import React, { useEffect } from 'react'
 
 function LocationTest(){
   const MyLocation =  useLocation()
+  // 副作用
   useEffect(() => {
     console.log(MyLocation)
   },[MyLocation])

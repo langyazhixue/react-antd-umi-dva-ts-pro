@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import { BrowserRouter,  Switch, Route,Redirect,  } from 'react-router-dom';
+import { BrowserRouter,  Switch, Route,Redirect } from 'react-router-dom';
 import Layout from './Layout'
 import NotFound from './components/NotFound'
 // import HomePage from './components/HomePage';
 // import UserPage from './components/UserPage';
 import LoginPage from './components/LoginPage';
-import PrivateRoute from './components/PrivatePage'
+// import PrivateRoute from './components/PrivatePage'
 class MRoutePage extends Component {
   render() {
     return (
       <BrowserRouter>
       <Switch>
-      <Redirect exact from='/' to='/layout' />
+        <Redirect exact from='/' to='/layout' />
         <Route path='/layout' component={Layout}></Route>
         {/* <PrivatePage component={Layout}>
           <Route path="/home" component={HomePage} />

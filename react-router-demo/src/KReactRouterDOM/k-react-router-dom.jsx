@@ -1,3 +1,4 @@
+
 import { createBrowserHistory } from 'history';
 import React, { useContext } from 'react';
 const RouterContext = React.createContext();
@@ -5,7 +6,7 @@ const RouterContext = React.createContext();
 export class KBrowserRouter extends React.Component {
   constructor(props) {
     super(props);
-    this.history = createBrowserHistory(this.props);
+    this.history = createBrowserHistory(this.props); // 利用History这个库
     this.state = {
       location: this.history.location,
     };
@@ -13,6 +14,7 @@ export class KBrowserRouter extends React.Component {
     this.unlisten = this.history.listen(location => {
       console.group('listen')
       console.log(location)
+      // 修改location，使得组件重新渲染
       this.setState({ location });
     });
   }
@@ -37,6 +39,7 @@ export class KBrowserRouter extends React.Component {
 
 // 实现 Route
 export function KRoute(props) {
+  // ctx  可以拿到 location.history
   const ctx = useContext(RouterContext);
   const { path, commponent: Cmp } = props;
   const { location } = ctx;
@@ -48,7 +51,6 @@ export function KRoute(props) {
 }
 
 // 实现 Link
-
 export class KLink extends React.Component {
   handleClick = (event, history) => {
     event.preventDefault();
