@@ -1,16 +1,14 @@
 import React from 'react';
 import './App.css';
-//import RouterPage from './pages/RouterPage/index';
+import RouterPage from './pages/RouterPage/index';
 // import KRouterPage from './pages/KRouterPage/index';
-
-import MRoutePage from './pages/MyProPage/index'
-
+// import MRoutePage from './pages/MyProPage/index'
 function App() {
   return (
     <div className="App">
-      {/* <RouterPage /> */}
+      <RouterPage />
       {/* <KRouterPage/> */}
-      <MRoutePage/>
+      {/* <MRoutePage/> */}
     </div>
   );
 }

@@ -1,20 +1,57 @@
 import React, { Component, useEffect } from 'react';
 
-import { BrowserRouter, NavLink , Route, Switch, Redirect,useLocation } from 'react-router-dom';
+import { NavLink , Route, Switch, Redirect,useLocation } from 'react-router-dom';
 import * as ReactRouterDOM from 'react-router-dom'
 // react-router 中奉行一切介是组件的思想
 // 路由器器-Router、链接-Link、路由-Route、独占-Switch、重定向-Redirect都 以组件形式存在
 // Route渲染优先级:children>component>render
-import HomePage from './HomePage';
+// import { dynamicImport } from '../../utils/dynamicImport'
 // import UserPage from './UserPage';
-import SearchPage from './SearchPage';
-import PrivateRoute from './PrivateRoute';
-import LoginOut from './LoginOut';
-import LoginPage from './LoginPage';
-import TestPage from './TestPage';
-import HooksPage from './HooksPage'
+// import SearchPage from './SearchPage';
+// import PrivateRoute from './PrivateRoute';
+// import LoginOut from './LoginOut';
+// import LoginPage from './LoginPage';
+// import TestPage from './TestPage';
+// import HooksPage from './HooksPage';
 import './index.css';
-function LocationTest(){
+// import HomePage from './HomePage';
+import loadable from '@loadable/component'
+
+
+
+function Loading () {
+  return (
+    <div>Loading...</div>
+  ) 
+}
+// export function dynamicImport(CmpURL) {
+//   const LoadableComponent  = loadable(() => import(CmpURL));
+//   return LoadableComponent
+// } 
+const HomePage =  loadable(() => import('./HomePage'),{
+  fallback: <Loading />
+})
+// const HomePage = dynamicImport('./HomePage')
+const SearchPage =  loadable(() => import('./SearchPage'),{
+  fallback: <Loading />
+})
+const LoginOut =  loadable(() => import('./LoginOut'),{
+  fallback: <Loading />
+})
+const  LoginPage = loadable(() => import('./LoginPage'),{
+  fallback: <Loading />
+}) 
+const TestPage = loadable(() => import('./TestPage'),{
+  fallback: <Loading />
+})
+const HooksPage = loadable(() => import('./HooksPage'),{
+  fallback: <Loading />
+})
+const PrivateRoute = loadable(() => import('./PrivateRoute'),{
+  fallback: <Loading />
+})
+
+function LocationTest () {
   const MyLocation =  useLocation()
   useEffect(() => {
     console.log(MyLocation)
@@ -25,6 +62,7 @@ function LocationTest(){
   </div>
   )
 }
+
 class RouterPage extends Component {
   //  判断是否激活链接的额外功能
   // isActive =(match, location) => {
@@ -43,16 +81,6 @@ class RouterPage extends Component {
     return (
       <div className = 'main'>
         <h1>RouterPage</h1>
-        <h1>
-        </h1>
-        <BrowserRouter 
-        basename='/calendar' 
-        getUserConfirmation={(message, callback) => {
-        // this is the default behavior
-        console.log(message)
-        const allowTransition = window.confirm(message);
-          callback(allowTransition);
-        }}>
           <nav>
             <div>
               <LocationTest/>
@@ -83,7 +111,6 @@ class RouterPage extends Component {
             <Route path="/test" component={TestPage} />
             <Route render={() => <div>404</div>} />
           </Switch>
-        </BrowserRouter>
       </div>
     );
   }

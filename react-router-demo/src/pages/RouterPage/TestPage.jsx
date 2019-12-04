@@ -1,5 +1,22 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux'
+class Topics extends Component {
+  render() {
+    console.group('withRouter')
+    console.log(this.props)
+    // match,location, history, store 中的数据都在props中传递下来了
+    return (
+      <p>在withRouter中用redux</p>
+    )
+  }
+}
+
+const mapStateToPrpos = (state) => {
+  return state.user
+}
+const TopicsWapper = withRouter(connect(mapStateToPrpos)(Topics))
+
 class Search extends Component {
   go = () => {
     const { history } = this.props;
@@ -20,6 +37,7 @@ class TestPage extends Component {
     return (
       <div>
         <div>Test</div>
+        <TopicsWapper/>
         <SearchChild />
       </div>
     );
