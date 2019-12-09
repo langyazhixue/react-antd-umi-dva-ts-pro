@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { onIncrement, onDecrement, onDecrementAsync} from './action'
-
+import { onIncrement, onDecrement, onDecrementAsync } from './action'
 class SagaPage extends Component {
   DynamicImport = () => {
     import('./myImport.js')
