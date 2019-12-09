@@ -1,5 +1,5 @@
 // import { delay } from 'redux-saga'
-import { put, takeEvery , takeLatest,takeLeading, all } from 'redux-saga/effects'
+import { put, takeEvery , takeLatest,takeLeading,actionChannel, all,take,call,fork } from 'redux-saga/effects'
 const delay = (ms) => {
   return new Promise((resolve,reject) => {
     setTimeout(() => {
@@ -22,8 +22,16 @@ function* incrementAsync(...args) {
     })
 }
 
-function* watchIncrementAsync() {
-  yield takeLeading ('INCREMENT_ASYNC',incrementAsync,'arg1','arg2')
+// function* watchIncrementAsync() {
+//   yield takeLeading ('INCREMENT_ASYNC',incrementAsync,'arg1','arg2')
+// }
+
+function* watchIncrementAsync2() {
+  const requestChan = yield actionChannel('INCREMENT_ASYNC')
+  while(true) {
+   yield take(requestChan)
+    yield call(incrementAsync)
+  }
 }
 
 export default function* rootSaga(...args) {
@@ -31,6 +39,7 @@ export default function* rootSaga(...args) {
   console.log(args)
    yield all ([
     helloSaga(),// 执行了helloSaga
-    watchIncrementAsync()
+    fork(watchIncrementAsync2),
+    // watchIncrementAsync()
   ])
 }
