@@ -9,6 +9,7 @@
 /react-redux-demo/node_modules
 /react-router-demo/node_modules
 /react-router-redux-saga-demo/node_modules
+/dva-quickstart/node_modules
 # production
 /dist
 

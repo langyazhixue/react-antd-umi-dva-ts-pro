@@ -1,0 +1,6 @@
+{
+  "extends": "umi",
+  "rules":{
+    "react/no-typos":0
+  }
+}
