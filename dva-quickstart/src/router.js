@@ -1,9 +1,22 @@
 import React from 'react';
 // dva/router 使用的是react-router
 import { Router, Route, Switch } from 'dva/router';
-import IndexPage from './routes/IndexPage';
-import ModelPage from './routes/ModelPage';
-function RouterConfig({ history }) {
+import dynamic  from 'dva/dynamic'
+// 路由配置文件
+
+
+
+function RouterConfig({ history, app }) {
+  const IndexPage = dynamic({
+    app,
+    models:() => [import('./routes/IndexPage/model.js')],
+    component:() => import('./routes/IndexPage/index')
+  })
+  const ModelPage =  dynamic({
+    app,
+    models:() => [import('./routes/ModelPage/model.js')],
+    component:() => import('./routes/ModelPage/index')
+  })
   return (
     <Router history={history}>
       <Switch>
