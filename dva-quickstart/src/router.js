@@ -17,11 +17,20 @@ function RouterConfig({ history, app }) {
     models:() => [import('./routes/ModelPage/model.js')],
     component:() => import('./routes/ModelPage/index')
   })
+
+  const dvaLoadingPage =  dynamic({
+    app,
+    models:() => [import('./routes/dvaLoadingPage/model.js')],
+    component:() => import('./routes/dvaLoadingPage/index')
+  })
+
+
   return (
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={IndexPage} />
         <Route path='/model' component = {ModelPage}/>
+        <Route path='/loading' component = {dvaLoadingPage}/>
       </Switch>
     </Router>
   );

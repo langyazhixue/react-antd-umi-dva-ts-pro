@@ -10,10 +10,12 @@ export default {
     // 可以监听路由变化，鼠标，键盘变化，服务器连接变化，状态变化等
     test({dispatch, history}) {
     },
+
     setup({ dispatch, history }) {  // eslint-disable-line
       console.log()
     },
     setupHistory({dispatch,history}){
+      // 添加监听
       history.listen((location) => {
         console.log(location)   //这里可以获取当前变化的history路径以及参数，hash所有值，这样就可以在路由地址变化后做处理
       })
