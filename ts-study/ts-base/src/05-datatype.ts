@@ -27,9 +27,7 @@ let add= (x:number, y:number): number=> x + y
 // compute是定义的一种函数类型，但是没有实现
 let compute:(x:number,y:number) => number
 compute = (a, b) => a + b
-
 // 对象
-
 // let obj : object = {
 //   x: 1,
 //   y: 2
@@ -59,7 +57,18 @@ let nu: null = null
 
 num = undefined
 
-// void
-
+// void: 一个没有任何返回值的类型
 let noReturn = () => {}
+
+// any
+let x 
+x = 1
+x =[]
+
+// never 永远不会有返回值的类型
+
+let  error = () => {
+  throw new Error('error')
+}
+
 
