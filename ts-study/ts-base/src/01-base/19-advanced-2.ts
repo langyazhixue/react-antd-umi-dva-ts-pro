@@ -25,12 +25,14 @@ interface Obj3 {
 // T[K]
 let key: keyof Obj3  = 'a'
 
-let value: Obj3['a']  = 1
+let value: Obj3['a']  = 0
+
+type newV = keyof Obj3
 
 // T entends U
 
 // T 跟 K 是泛型变量
-
+// K extends keyof T K 是来自T的所有属性字面量的联合类型
 function getValue<T,K extends keyof T>(obj1:T, keys:K[]): T[K][] {
   return keys.map(key => obj1[key])
 }

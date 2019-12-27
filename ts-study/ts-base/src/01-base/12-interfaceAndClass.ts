@@ -27,7 +27,7 @@ interface Child {
 
 
 interface Boy extends Man,Child {
-
+  
 }
 
 let boy: Boy = {

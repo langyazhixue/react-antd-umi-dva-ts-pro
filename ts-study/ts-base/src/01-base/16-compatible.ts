@@ -1,12 +1,10 @@
-import { number, func } from "_@types_prop-types@15.7.3@@types/prop-types";
+
 
 // 类型检查机制
 // 类型兼容性
 
 // 当一个类型Y可以被赋值给另一个类型X时，我们就可以说类型X兼容类型Y
 // X兼容Y：X(目标类型) = Y(源类型)
-
-
 
 // 字符型是兼容null
 let s:string = 'a'
@@ -23,11 +21,11 @@ interface X {
 interface Y {
   a: any;
   b: any;
- c: any;
+  c: any;
 }
 
 // X 类型 兼容 Y 类型
-let x1 : X = {
+let x1:X = {
   a: 1,
   b: 2
 }
@@ -43,7 +41,7 @@ x1 = x2
 
 // 函数兼容性
 
-type  Handler = (a:number, b: number) => void
+type Handler = (a:number, b: number) => void
 function hof(handler:Handler) {
   return handler
 }
@@ -59,7 +57,7 @@ let hanlder2 = (a:number,b:number,c:number) => {}
 
 
 // 可选参数和剩余参数
-let a = (p1:number, p2:number) => {}
+let a___ = (p1:number, p2:number) => {}
 
 let b = (p1:number,p2?:number) => {}
 
@@ -70,7 +68,7 @@ let c = (...args:number[]) => {}
 // b = c
 // b = a
 
-c = a
+// c = a
 c = b
 
 // 2) 参数类型要兼容
@@ -95,14 +93,14 @@ let p2d = (point:Point2D ) => {}
 // p2d = p3d
 
 //3） 返回值类型
-let f = () => ({name:'Alice'})
+let ff = () => ({name:'Alice'})
 
 let g = () => ({name:'Alice',location:'Beijing'})
-f = g
+ff = g
 
 function overload(a:number,b:number): number //目标函数
 function overload(a:string,b:string): string // 目标函数
-function overload(a:any,b:any):any {  // 源函数 // 原函数的参数要少于目标函数
+function overload(a:any,b:any):any {  // 源函数 // 源函数的参数要少于目标函数
 
 }
 
@@ -113,8 +111,8 @@ enum Fruit {
 }
 
 enum Color {
-  Yellow,
-  Red
+  YellowT,
+  RedT
 }
 
 //  Fruit.Apple = 0
@@ -147,7 +145,7 @@ let aa = new A_com(1,2)
 console.log(aa)
 let bb = new B_com(1)
 
-// aa = bb // 参数多的可以兼容少的
+// aa = bb // 参数多的可以兼容少的，有 private 就可以
 
 // bb = aa
 
@@ -168,7 +166,7 @@ let obj1: Enmty<number> = {
   name: 1
 }
 
-let obj2: Enmty<string> = {
+let obj22: Enmty<string> = {
   name: '11'
 }
 // 只有类型参数T被接口使用的时候，才会影响泛型的兼容性
@@ -177,4 +175,11 @@ let obj2: Enmty<string> = {
 let log1 = <T>(x:T) :T => {
   return x
 }
+
+let log2 = <U>(x:U) :U => {
+  return x
+}
+
+log1 = log2
+
 

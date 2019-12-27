@@ -1,5 +1,4 @@
 // ts 高级类型：交叉类型与联合类型
-
 // 交叉类型：将所有类型合并为一个类型，新的类型具有所有特性，交叉类型特别适合对象混入的场景
 
 interface DogInterface {
@@ -40,7 +39,7 @@ class Cat_a implements CatInterface {
   jump(){}
   eat(){}
 }
-
+// 数字枚举类型
 enum Master {
   Boy,
   Girl
@@ -53,7 +52,6 @@ function getPet(master:Master) {
 }
 
 // 可区分的联合类型，一个类型是多个类型的联合类型，并且又一个公共的属性，那么就可以凭借这个公共属性，创建类型保护区块
-
 
 interface Square {
   kind: 'square';
@@ -79,16 +77,15 @@ function area (s:Shape):number {
     case 'rectangle':
       return s.height * s.with
     case 'circle':
-    return Math.PI* s.r **2 
-
+      return Math.PI * s.r **2 
     default:
-    return ((e:never) => {
-      throw new Error(e)
-    })(s)
+      return ((e:never) => {
+        throw new Error(e)
+      })(s)
   }
 }
-
+// never 
 console.log(area({
-  kind:'circle',
-  r:1
+  kind: 'circle',
+  r: 1
 }))

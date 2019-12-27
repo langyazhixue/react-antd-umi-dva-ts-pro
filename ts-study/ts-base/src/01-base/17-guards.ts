@@ -1,7 +1,7 @@
 // 类型保护
 
 // TS 能够在特定的区块中保证变量属于某种确定的类型
-// 可以在词区块中方向的引用此类型的属性，或者调用此类型的方法
+// 可以在此区块中方向的引用此类型的属性，或者调用此类型的方法
 enum Type {
   Strong,
   Week
@@ -57,7 +57,6 @@ function getLang(type: Type, x:string | number) {
   }
 
   // 创建一个类型保护函数
-
   if(isJava(lang)) {
     lang.helloJava()
   } else {
@@ -65,7 +64,6 @@ function getLang(type: Type, x:string | number) {
   }
   return lang
 }
-
 
 getLang(Type.Strong,1)
 

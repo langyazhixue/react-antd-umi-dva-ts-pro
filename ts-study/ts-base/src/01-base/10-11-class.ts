@@ -4,7 +4,7 @@
 // protected: 受保护成员 只能在类或者子类中访问
 // readonly: 只读属性 只读属性一定要被初始化
 // 构造函数参数也可以添加修饰符，参数自动可以变成实例的属性
-// static : 静态成员, 只能通过类名来调用，不能通过子类来调用
+// static: 静态成员, 只能通过类名来调用，不能通过子类来调用
 
 class Dog77 {
   // 为构造参数增加了类型注解
@@ -14,9 +14,9 @@ class Dog77 {
   //   this.name= name
   // }
    constructor(name: string) {
-    this.name= name
+    this.name = name
   }
-  //  为成员属性添加了类型注解,也可以给一个基本值
+  // 为成员属性添加了类型注解,也可以给一个基本值
   public name?:string = 'dog'
   readonly legs: number = 5 // 只读属性一定要被初始化
   run(){

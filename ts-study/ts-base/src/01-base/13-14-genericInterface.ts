@@ -1,5 +1,5 @@
 
-//  interface 与 type 区别
+// interface 与 type 区别
 // interface只能定义对象类型，type声明的方式可以定义组合类型，交叉类型和原始类型
 // interface方式可以实现接口的extends/implements，而type 不行
 // interface可以实现接口的merge，但是type不行
@@ -92,13 +92,12 @@ interface Length {
 // T extends Length  给泛型增加约束
 // 所以T 就不能随便乱传乱，必须具有length属性
 function newLog<T extends Length >(value:T):T {
-  console.log(value,value.length) // T 类型上不存在 length 属性
+  console.log(value,value.length) // T 类型上不存在 length 属性
   return value
 }
 
 newLog([1])
 newLog('123')
-
 
 // 为什么使用泛型
 // 1. 函数和类可以轻松的支持多种类型，增强程序的扩展性
