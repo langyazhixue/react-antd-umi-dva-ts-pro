@@ -51,7 +51,6 @@ animals.forEach(v => {
 })
 
 // this 实现链式调用
-
 class WorkFlow {
   step1(){
     return this

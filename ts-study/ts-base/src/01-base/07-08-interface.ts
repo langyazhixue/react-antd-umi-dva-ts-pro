@@ -59,7 +59,6 @@ render(<Result>{
 
 
 // 定义一个可索引的接口
-
 // 1. 用数字来索引一个接口，一般是数组
 interface StringArray {
   [index: number] : string

@@ -14,7 +14,8 @@ type add3 = (x: number, y:number) => number
   add3C(1,2)
 
 interface add4 {
-  (x:number, y:number) : number
+  (x:number, y:number) : number,
+  [y:string]:any
 }
   // 实现
   let add4c:add4 = (a,b) => a + b

@@ -1,5 +1,4 @@
 // 声明合并
-
 interface A {
     x: number;
     // y: string;

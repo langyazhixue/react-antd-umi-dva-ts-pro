@@ -51,7 +51,6 @@ console.log(s1= s2)
 
 // undefined, null 
 // undefined, null  在官方文档中，这两个类型是其他类型的子类型
-
 let un: undefined  = undefined
 let nu: null = null
 

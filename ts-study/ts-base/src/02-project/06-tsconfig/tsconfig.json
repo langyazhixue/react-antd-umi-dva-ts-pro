@@ -1,6 +1,17 @@
 {
+  // 编译器需要编译的单个文件的目录
+  "files":[
+    "stc/a.ts"
+  ],
+  "include": [
+    "src/02-project/01-module/es6/*" // 支持通配符 意思是支持es6下面的一级文件  // include跟 files 会合并
+  ],
+
+  "exclude": [  // 默认是配置 node_modules 以及所有的声明
+    "node_modules"
+  ],
   "compilerOptions": {
-      // "incremental": true,                // 增量编译
+      // "incremental": true,                // 增量编译， 相当于存个缓存，提高编译速度
       // "tsBuildInfoFile": "./buildFile",   // 增量编译文件的存储位置
       // "diagnostics": true,                // 打印诊断信息
 
@@ -61,3 +72,6 @@
       // "listFiles": true,               // 打印编译的文件（包括引用的声明文件）
   }
 }
+
+
+// 如果没有说明的话，typescript 会编译3中文件 .ts .d.ts .tsx

@@ -21,14 +21,13 @@ enum Message {
 
  console.log(Message)
 
- // 异构枚举，字符串枚举跟数字枚举混合在一起
+// 异构枚举，字符串枚举跟数字枚举混合在一起
 enum Answer {
   N,
   Y = 'Yes'
 }
 
- // 枚举成员的值不能修改
-
+// 枚举成员的值不能修改
 enum Char {
   a,
   b = Char.a,

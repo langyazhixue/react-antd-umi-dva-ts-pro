@@ -1,4 +1,6 @@
 {
+  "extends": "./tsconfig.base.json", // 抽离基础配置
+  // "compileOnSave": true,  vscode 暂时不支持
   "compilerOptions": {
     /* Basic Options */
     // "incremental": true,                   /* Enable incremental compilation */

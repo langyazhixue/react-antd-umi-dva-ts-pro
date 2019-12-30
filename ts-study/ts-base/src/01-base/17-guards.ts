@@ -3,8 +3,8 @@
 // TS 能够在特定的区块中保证变量属于某种确定的类型
 // 可以在此区块中方向的引用此类型的属性，或者调用此类型的方法
 enum Type {
-  Strong,
-  Week
+  Strong, // 0
+  Week // 1
 }
 
 class Java {
@@ -21,7 +21,7 @@ class JavaScript {
   javascript:any
 }
 
-function isJava(lang:Java|JavaScript ) : lang is Java{
+function isJava(lang:Java|JavaScript ) : lang is Java { 
   return (lang as Java).helloJava  !== undefined
 }
 

@@ -1,4 +1,3 @@
-import { number } from "_@types_prop-types@15.7.3@@types/prop-types";
 
 // 类型检查机制
 
@@ -10,7 +9,7 @@ import { number } from "_@types_prop-types@15.7.3@@types/prop-types";
 // 3. 类型保护
 
 // 1. 类型推断
-// 不需要指定变量的类型(函数的返回值类型)， TS可以根据某些规则自动地为其推断出一个类型
+// 不需要指定变量的类型(函数的返回值类型), TS可以根据某些规则自动地为其推断出一个类型
 // 1. 基础类型推断
 // 2. 最佳通用类型推断
 // 3. 上下文类型推断
@@ -19,9 +18,8 @@ import { number } from "_@types_prop-types@15.7.3@@types/prop-types";
 
 let a = 1 
 
-let b = [1, null]
-
-let c = (x =1) => {
+let bbbb = [1, null]
+let cccc = (x =1) => {
   return x
 }
 

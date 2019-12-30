@@ -1,7 +1,7 @@
 
 // interface 与 type 区别
 // interface只能定义对象类型，type声明的方式可以定义组合类型，交叉类型和原始类型
-// interface方式可以实现接口的extends/implements，而type 不行
+// interface方式可以实现接口的extends/implements，而type不行
 // interface可以实现接口的merge，但是type不行
 
 // 泛型函数与泛型接口
@@ -20,7 +20,6 @@
 // }
 
 // 泛型：不预先确定的数据类型，具体的类型在使用的时候才确定
-
 // 用泛型改造log函数
 // T相当于any
 function log11<T>(value:T) :T {
@@ -40,12 +39,11 @@ type Log = <T>(value:T) => T
 // 实现了一个泛型函数的实现
 let myLog:Log = log11
 
-
 // 2. 泛型接口
 
 // 这种方式跟类型别名的方式是一样的
 interface Log1 {
-  <T>(value:T): T
+  <T = string>(value:T): T
 }
 
 // 打印日志

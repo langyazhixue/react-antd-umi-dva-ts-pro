@@ -40,7 +40,7 @@ x1 = x2
 // x2 = x1
 
 // 函数兼容性
-
+// 参数多的兼容参数少的
 type Handler = (a:number, b: number) => void
 function hof(handler:Handler) {
   return handler
@@ -121,7 +121,7 @@ enum Color {
 let fruit: Fruit.Apple = 3
 let no:number = Fruit.Apple
 
-// let color:Color.Red =  Fruit.Banana
+// let color:Color.Red = Fruit.Banana
 
 // 类兼容性
 // 类兼容性跟接口兼容性很相似
@@ -136,7 +136,7 @@ class A_com {
 
 class B_com {
   constructor(p:number) {
-  
+
   }
   id:number = 2
   private name:string = ''
@@ -163,6 +163,7 @@ interface Enmty<T> {
 }
 
 let obj1: Enmty<number> = {
+  
   name: 1
 }
 

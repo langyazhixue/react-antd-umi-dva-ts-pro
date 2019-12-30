@@ -1,0 +1,9 @@
+{
+  "include": [
+    "src/02-project/01-module/es6/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}
