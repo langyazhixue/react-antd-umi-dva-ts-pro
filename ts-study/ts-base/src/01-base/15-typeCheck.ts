@@ -15,11 +15,10 @@
 // 3. 上下文类型推断
 
 // 1. 基础类型推断
-
 let a = 1 
 
 let bbbb = [1, null]
-let cccc = (x =1) => {
+let cccc = (x = 1) => {
   return x
 }
 

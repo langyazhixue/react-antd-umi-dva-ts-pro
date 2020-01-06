@@ -41,7 +41,6 @@ class Cat extends Animal {
 }
 
 let cat = new Cat('cat')
-
 // cat.sleep()
 
 let animals:Animal[] = [rose, cat]

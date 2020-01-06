@@ -51,7 +51,7 @@ let myLog1:Log1 = (v) =>v
 myLog1(1)
 
 // 接口中所有的成员可以受到泛型变量的约束,可以指定默认类型
-interface Log2<T = string> {
+interface Log2<T = string>{
   (value:T): T
 }
 
@@ -59,12 +59,9 @@ let myLog2:Log2<number> = log11
 
 // 把泛型理解为代表类型的参数
 
-
 // 2. 泛型类与泛型约束
 
-
 // 静态成员不能引用类型参数
-
 
 class Log9<T> {
   run(value: T) {
@@ -80,7 +77,6 @@ log99.run(1)
 let log1010 = new Log9()
 
 log1010.run('ff')
-
 
 
 // 类型约束

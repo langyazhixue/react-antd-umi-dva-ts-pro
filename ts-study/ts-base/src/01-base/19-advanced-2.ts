@@ -1,6 +1,5 @@
 // 索引类型
 
-
 // function getValue(obj1: any, keys:string[]) {
 //   return keys.map(key => obj1[key])
 // }
@@ -10,7 +9,7 @@
 
 // keyof T keyof是索引类型查询操作符。假设T是一个类型，那么keyof T产生的类型是T的属性名称字符串字面量类型构成的联合类型
 interface Obj3 {
-  a:number;
+  a: number;
   b:string
 }
 
@@ -33,6 +32,7 @@ let obj2 = {
   b: 2,
   c: 3
 }
+
 
 function getValue<T,K extends keyof T>(obj1:T, keys:K[]): T[K][] {
   return keys.map(key => obj1[key])

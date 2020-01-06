@@ -19,7 +19,6 @@ let pet: DogInterface & CatInterface =  {
 }
 
 //  联合类型 类型不确定的时候用
-
 let a_a: number | string = 'a'
 
 // 字面量类型

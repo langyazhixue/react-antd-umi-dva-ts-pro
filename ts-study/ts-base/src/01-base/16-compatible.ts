@@ -50,9 +50,7 @@ function hof(handler:Handler) {
 let hanlder1 = (a:number) => {}
 hof(hanlder1)
 
-
 let hanlder2 = (a:number,b:number,c:number) => {}
-
 // hof(hanlder2) // 不行
 
 
@@ -89,8 +87,8 @@ interface Point2D {
 let p3d = (point:Point3D ) => {}
 let p2d = (point:Point2D ) => {}
 
-// p3d = p2d // 成员多的兼容成员多的，可以理解为函数参数多的，兼容参数少
-// p2d = p3d
+// p3d = p2d // 成员多的兼容成员少的，可以理解为函数参数多的，兼容参数少
+p2d = p3d
 
 //3） 返回值类型
 let ff = () => ({name:'Alice'})
@@ -145,10 +143,10 @@ let aa = new A_com(1,2)
 console.log(aa)
 let bb = new B_com(1)
 
-// aa = bb // 参数多的可以兼容少的，有 private 就可以
+// aa = bb // 参数多的可以兼容少的，有 private 就不可以
 
 // bb = aa
-
+// 继承，子可以兼容父
 class C_com extends A_com {}
 
 let cc = new C_com(1,2)
@@ -163,7 +161,6 @@ interface Enmty<T> {
 }
 
 let obj1: Enmty<number> = {
-  
   name: 1
 }
 
@@ -171,8 +168,7 @@ let obj22: Enmty<string> = {
   name: '11'
 }
 // 只有类型参数T被接口使用的时候，才会影响泛型的兼容性
-// obj1 = obj2 // 
-
+// obj1 = obj2 
 let log1 = <T>(x:T) :T => {
   return x
 }

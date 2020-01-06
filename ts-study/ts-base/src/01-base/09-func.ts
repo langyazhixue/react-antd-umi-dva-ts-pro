@@ -9,9 +9,9 @@ let add2: (x: number, y:number) => number
 
 // 可以通过type类型来定义，也可以通过接口来定义
 type add3 = (x: number, y:number) => number
-  // 实现
-  let add3C: add3 = (a,b) => a + b
-  add3C(1,2)
+// 实现
+let add3C: add3 = (a,b) => a + b
+add3C(1,2)
 
 interface add4 {
   (x:number, y:number) : number,
@@ -42,7 +42,6 @@ add6(1,2)
 
 
 // 剩余参数
-
 function add7(x:number, ...rest: number[]) {
   return x + rest.reduce((pre,next) => {
     return pre + next

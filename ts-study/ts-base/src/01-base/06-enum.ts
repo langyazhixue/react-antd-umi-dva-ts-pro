@@ -19,7 +19,7 @@ enum Message {
   Fail = '失败了'
 }
 
- console.log(Message)
+console.log(Message)
 
 // 异构枚举，字符串枚举跟数字枚举混合在一起
 enum Answer {
@@ -45,7 +45,6 @@ const enum Month {
 }
 
 //  console.log(Month)
-
 let month = [Month.Jan,Month.Feb, Month.Mar] // 0 1 2
 console.log(month)
 

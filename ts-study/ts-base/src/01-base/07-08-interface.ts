@@ -44,8 +44,9 @@ render({
     }
   ]
 } as Result)
-// 类型断言2
 
+// 类型断言2
+// 类型声明
 render(<Result>{
   data:[
     {
@@ -81,15 +82,15 @@ interface Res {
 // let add: (x:number, y: number) => number
 
 // 用接口的方式定义一个函数
-// interface Add {
-//   (x:number, y:number):number
-// }
+interface Add {
+  (x:number, y:number):number
+}
 
 
 
 // 类型别名
 
-type Add = (x: number, y:number) => number
+//type Add = (x: number, y:number) => number
 
 let add1: Add = (a, b) => a + b
 
@@ -99,13 +100,14 @@ console.log(add1(1,2))
 interface Lib {
   (): void;
   version: string;
-  doSomething():void
+  doSomething(a:string, b:string):void
 }
 
 function getLib() {
   let lib = (() => {}) as Lib
   lib.version = '1.0'
-  lib.doSomething = () => {
+  lib.doSomething = (t,z) => {
+    console.log(t + z)
     console.log('getLib')
   }
   return lib
@@ -115,5 +117,5 @@ let lib1 = getLib()
 
 lib1()
 
-lib1.doSomething()
+lib1.doSomething('tt','zz')
 

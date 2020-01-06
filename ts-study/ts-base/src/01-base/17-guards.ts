@@ -50,12 +50,11 @@ function getLang(type: Type, x:string | number) {
   }
 
   // typeof 帮助判断基本类型
-  if(typeof x === 'string') {
+  if(typeof x === 'string'){
     x.length
   } else {
     x.toFixed()
   }
-
   // 创建一个类型保护函数
   if(isJava(lang)) {
     lang.helloJava()
