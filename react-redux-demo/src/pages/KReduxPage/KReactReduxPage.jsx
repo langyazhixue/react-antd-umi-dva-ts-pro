@@ -45,12 +45,12 @@ const mapStateToProps = (state) => {
 
 const  mapDispatchToProps = {
   add: () =>  ({ type: "add"}),
-  minus:() => ({ type: "minus" })
-  // asyAdd: (dispatch) => {
-  //   setTimeout(() => {
-  //     dispatch({ type: "add" })
-  //   }, 1000);
-  // }
+  minus:() => ({ type: "minus" }),
+  asyAdd: () => (dispatch) => {
+    setTimeout(() => {
+      dispatch({ type: "add" })
+    }, 1000);
+  }
 }
 // connect 返回一个新函数，可以接收一个等待包装的组件
 export default connect(mapStateToProps, mapDispatchToProps)(ReactReduxStore)

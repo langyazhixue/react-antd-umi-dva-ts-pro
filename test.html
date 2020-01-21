@@ -19,4 +19,45 @@
     <use xlink:href="#shape" x="200" y="50" />
   </svg>
 </body>
+<script>
+
+  function f1(x) {
+    console.log(x)
+    console.log("f1")
+    return (y) => {
+      console.log(y)
+    }
+  }
+  function f2(y) {
+    console.log(y)
+    console.log("f2")
+    return y
+  }
+  function f3(z) {
+    console.log(z)
+    console.log("f3");
+    return z
+  }
+
+
+
+// 聚合函数
+function compose(...funcs) {
+  if (funcs.length === 0) {
+    return arg => arg
+  }
+  if (funcs.length === 1) {
+    return funcs[0]
+  }
+  return funcs.reduce((a, b) => (...args) =>
+    b(a(...args))
+  )
+}
+// 输出 1， 2， 3
+// 之前的函数的执行结果是后面函数的参数
+// compose(f1,f2,f3) 返回的是一个函数
+// f3(f2(f1(tt))) 从向外执行
+let res = compose(f1,f2,f3)('tt')('yyy')
+
+</script>
 </html>

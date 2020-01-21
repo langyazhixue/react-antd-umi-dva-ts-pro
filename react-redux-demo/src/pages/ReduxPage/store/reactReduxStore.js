@@ -16,7 +16,6 @@ const store = createStore(
   }),
   // 用了一个聚合函数
   compose(applyMiddleware(logger, thunk),composeWithDevTools())
-  
 )
 
 export default store;

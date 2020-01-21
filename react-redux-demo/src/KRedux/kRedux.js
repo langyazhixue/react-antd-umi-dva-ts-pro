@@ -80,7 +80,7 @@ export function compose(...funcs) {
 // 输出 1， 2， 3
 // 之前的函数的执行结果是后面函数的参数
 // compose(f1,f2,f3) 返回的是一个函数
-// let res = compose(f1,f2,f3)('tt')
+// let res = compose(f1,f2,f3)('tt') // 从外向里执行
 
 export function applyMiddleware(...middlewares) {
   return createStore =>(...args) => {
