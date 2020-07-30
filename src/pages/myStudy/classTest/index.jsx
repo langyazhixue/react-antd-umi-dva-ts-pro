@@ -18,7 +18,7 @@ import yay from '@/assets/yay.jpg';
 // React中使 onXX写法来监听事件。
 // 事件回调函数注意绑定this指向，常用三种方法:
 // 1. 构造函数中绑定并覆盖:this.change = this.change.bind(this)
-// 2.  方法定义为箭头函数:change =()=>{}
+// 2. 方法定义为箭头函数:change =()=>{}
 // 3. 事件中定义为箭头函数:onChange={()=>this.change()}
 // react 遵循单项数据流，没有双向绑定，输入框要设置value和 onChange，称为受控组件
 

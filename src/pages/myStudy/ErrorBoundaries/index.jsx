@@ -5,7 +5,7 @@
 
 // 部分 UI 的 JavaScript 错误不应该导致整个应用崩溃，为了解决这个问题，React 16 引入了一个新的概念 —— 错误边界。
 
-// 错误边界是一种React 组件，这种组件可以捕获并打印发生在其自组件树任何位置的js错误，并且会渲染出备用UI，而不是渲染出备用UI
+// 错误边界是一种 React 组件，这种组件可以捕获并打印发生在其自组件树任何位置的js错误，并且会渲染出备用UI，而不是渲染出备用UI
 // 错误边界在渲染期间、生命周期方法和整个组件树的构造函数中捕获错误
 
 import React from 'react';
@@ -33,7 +33,6 @@ class ErrorBoundary extends React.Component {
       // 你可以自定义降级后的 UI 并渲染
       return <h1>Something went wrong</h1>;
     }
-    
     return this.props.children;
   }
 }
@@ -91,9 +90,9 @@ function MyErrorBoundary() {
 
 // 错误边界应该放置在哪里
 // 错误边界的粒度由你来决定，可以将其包装在最顶层的路由组件并为用户展示一个 “Something went wrong” 的错误信息，就像服务端框架经常处理崩溃一样
-// 你也可以将单独的部件包装在错误边界以保护应用其他部分不崩溃。
+// 你也可以将单独的部件包装在错误边界以保护应用其他部分不崩溃
 
-// 未捕获错误的新行为：任务未被错误边界捕获的错误将会导致整个React 组件被卸载
+// 未捕获错误的新行为：任务未被错误边界捕获的错误将会导致整个React组件被卸载
 
 
 export default MyErrorBoundary;

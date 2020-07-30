@@ -38,7 +38,7 @@ console.log(dog77)
 class Husky extends Dog77 {
   // 构造函数参数也可以添加修饰符，参数自动可以变成实例的属性
   constructor(name:string, public color: string) {
-    super(name)
+    super(name) // 继承
     // this.color = color
     this.pro()
   }

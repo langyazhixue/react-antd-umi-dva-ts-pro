@@ -41,8 +41,6 @@ class ChildB extends Component {
     )
   }
 }
-
-
 class ChildC extends Component {
   //在子组件中用于说明context接收的数据类型，必须的
   static contextTypes =  {

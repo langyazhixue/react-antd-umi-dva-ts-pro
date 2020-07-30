@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // DOM 元素
-// React 实现了一套独立于浏览器的DOM 系统，兼顾了性能和跨浏览器的兼容性
+// React 实现了一套独立于浏览器的DOM系统，兼顾了性能和跨浏览器的兼容性
 // 属性差异
 // React 与 HTML 之间有很多属性存在差异：
 // 1. React中，所有的DOM特性和属性（包括事件处理）都应该是小驼峰命名的方式。

@@ -1,5 +1,5 @@
 // 条件类型
-// <> 泛型就是用一个东西表示广泛的类型。
+// <> 泛型就是用一个东西表示广泛的类型
 // T extends U ? x : y
 // 条件类型使得类型不具有唯一性
 // 也增加了语言灵活性
@@ -15,7 +15,7 @@ type T2 = TypeName<number>
 
 // 分布式条件类型
 // (A | B) extends U ? X : Y , 结果类型会变成多个类型的条件类型
-// (A ) extends U ? X : Y | (B) extends U ? X : Y
+// (A) extends U ? X : Y | (B) extends U ? X : Y
 
 type T3 = TypeName<string | string[]>
 

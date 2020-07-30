@@ -37,16 +37,6 @@ let boy: Boy = {
   cry(){}
 }
 
-
-
-
-
-
-
-
-
-
-
 // 接口可以继承类
 class Auto {
   state = 1

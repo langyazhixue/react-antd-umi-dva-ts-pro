@@ -1,3 +1,4 @@
+// 定义接口类型
 interface List {
   [x:string]: any;  //字符串索引签名，用任意的x索引签名
   readonly id: number;  // 只读属性

@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 // 4. render
 // 5. componentDidMount
 // 6. componentWillReceiveProps  父亲组件有新的props 传递下来
-// 7. shouldComponentUpdate
+// 7. shouldComponentUpdate (16.4 中还保留着)
 // 8  componentWillUpdate
 // 9  render
 // 10 componentDidUpdate
@@ -20,12 +20,11 @@ import React, { Component } from 'react';
 
 
 // 16.4 以后的生命周期：
-// 用 getDerivedStateFromProps 代替
-// componentWillMount componentWillReceiveProps componentWillUpdate, 目前使用的话加上 UNSAFE_
+// 用 getDerivedStateFromProps 代替 componentWillReceiveProps
+// componentWillMount  componentWillUpdate, componentWillReceiveProps 目前使用的话加上 UNSAFE_
 
-// getSnapshotBeforeUpdate 代替 shouldComponentUpdate
+// getSnapshotBeforeUpdate 在 render 事件发生在 之后
 // 变更缘由：React Fiber https://zhuanlan.zhihu.com/p/26027085
-
 
 import SnapshotSample from './SnapshotSample.jsx'
 class Child extends Component {
@@ -70,7 +69,8 @@ static getDerivedStateFromProps (nextProps,prevState) {
     console.group('childgetSnapshotBeforeUpdate')
     console.log(prevProps)
     console.log(prevProps)
-    return 111111
+    
+    return 111
   }
 
   componentDidUpdate(prevProps, prevState,snapshot){
@@ -86,7 +86,33 @@ static getDerivedStateFromProps (nextProps,prevState) {
     console.log(this.props)
     console.log(this.state)
     return (
+      <div>
       <div>{this.state.message}</div>
+      <Child2/>
+      </div>
+      
+    )
+  }
+}
+
+class Child2 extends Component  {
+  constructor(props) {
+    super(props)
+    this.state = {
+      name:'北京'
+    }
+  }
+  getSnapshotBeforeUpdate(prevProps, prevState){
+    
+    return false
+  }
+  componentDidUpdate(prevProps,prevState){
+    console.group('父组件在更新')
+    console.log('正在更新')
+  }
+  render(){
+    return (
+      <div>{this.state.name}</div>
     )
   }
 }
@@ -122,6 +148,10 @@ class LifeCycleTest extends Component {
   // }
   shouldComponentUpdate(nextProps,nextState) {
     // console.log(arguments)
+    // 1. 主要用于性能优化(部分更新)
+    // 2. 唯一用于控制组件重新渲染的生命周期，由于在react中，setState以后，state发生变化，组件会进入重新渲染的流程，在这里return false可以阻止组件的更新
+    // 3. 因为react父组件的重新渲染会导致其所有子组件的重新渲染，这个时候其实我们是不需要所有子组件都跟着重新渲染的，因此需要在子组件的该生命周期中做判断
+    // 在这里return false可以阻止组件的更新
     return nextState.user.id !== this.state.user.id ||  nextState.user.name!==this.state.user.name
   }
 
@@ -155,8 +185,8 @@ class LifeCycleTest extends Component {
     this.setState({
       user: {
         id: '2',
-        name: '杭州',
-        addr: 'lily',
+        name: '杭州2',
+        addr: 'lily2',
       },
     });
   };
@@ -173,6 +203,10 @@ class LifeCycleTest extends Component {
         <div>
           <h1>子组件</h1>
           <Child user={user}/>
+        </div>
+        <div>
+          <h2>自组建2</h2>
+          
         </div>
         <div>
           <h1>getSnapshotBeforeUpdate Demo</h1>
